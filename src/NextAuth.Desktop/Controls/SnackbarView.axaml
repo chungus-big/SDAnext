@@ -1,0 +1,93 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:controls="clr-namespace:NextAuth.Desktop.Controls"
+             x:Class="NextAuth.Desktop.Controls.SnackbarView"
+             x:Name="Root"
+             IsVisible="False">
+
+    <UserControl.Styles>
+        <!-- Success Style -->
+        <Style Selector="controls|SnackbarView.success Border#RootBorder">
+            <Setter Property="BorderBrush" Value="{DynamicResource NextSuccessBrush}" />
+        </Style>
+        <Style Selector="controls|SnackbarView.success material|MaterialIcon#StatusIcon">
+            <Setter Property="Foreground" Value="{DynamicResource NextSuccessBrush}" />
+            <Setter Property="Kind" Value="CheckCircleOutline" />
+        </Style>
+
+        <!-- Warning Style -->
+        <Style Selector="controls|SnackbarView.warning Border#RootBorder">
+            <Setter Property="BorderBrush" Value="{DynamicResource NextWarningBrush}" />
+        </Style>
+        <Style Selector="controls|SnackbarView.warning material|MaterialIcon#StatusIcon">
+            <Setter Property="Foreground" Value="{DynamicResource NextWarningBrush}" />
+            <Setter Property="Kind" Value="AlertOutline" />
+        </Style>
+
+        <!-- Error Style -->
+        <Style Selector="controls|SnackbarView.error Border#RootBorder">
+            <Setter Property="BorderBrush" Value="{DynamicResource NextErrorBrush}" />
+        </Style>
+        <Style Selector="controls|SnackbarView.error material|MaterialIcon#StatusIcon">
+            <Setter Property="Foreground" Value="{DynamicResource NextErrorBrush}" />
+            <Setter Property="Kind" Value="AlertCircleOutline" />
+        </Style>
+
+        <!-- Info Style (Default) -->
+        <Style Selector="controls|SnackbarView.info Border#RootBorder">
+            <Setter Property="BorderBrush" Value="{DynamicResource NextAccentBrush}" />
+        </Style>
+        <Style Selector="controls|SnackbarView.info material|MaterialIcon#StatusIcon">
+            <Setter Property="Foreground" Value="{DynamicResource NextAccentBrush}" />
+            <Setter Property="Kind" Value="InformationOutline" />
+        </Style>
+
+        <!-- Close Button hover style -->
+        <Style Selector="Button#CloseButton:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="#25FFFFFF" />
+        </Style>
+        <Style Selector="Button#CloseButton:pointerover material|MaterialIcon">
+            <Setter Property="Opacity" Value="1.0" />
+        </Style>
+    </UserControl.Styles>
+
+    <Border x:Name="RootBorder"
+            Background="{DynamicResource NextPanelBrush}"
+            CornerRadius="6"
+            Padding="14,10"
+            BorderThickness="1"
+            BoxShadow="0 4 16 0 #B0000000">
+        <Grid ColumnDefinitions="Auto,*,Auto,Auto">
+            <material:MaterialIcon x:Name="StatusIcon" Grid.Column="0"
+                                   Width="20" Height="20"
+                                   Margin="0,0,10,0"
+                                   VerticalAlignment="Center" />
+            <TextBlock x:Name="MessageText" Grid.Column="1"
+                       Text="{Binding #Root.Message}"
+                       Foreground="White"
+                       FontSize="13"
+                       VerticalAlignment="Center"
+                       TextWrapping="Wrap"
+                       MaxWidth="480" />
+            <Button x:Name="ActionButton" Grid.Column="2"
+                    Content="{Binding #Root.ActionText}"
+                    IsVisible="False"
+                    Margin="12,0,0,0"
+                    Padding="10,4"
+                    FontSize="12"
+                    VerticalAlignment="Center" />
+            <Button x:Name="CloseButton" Grid.Column="3"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    CornerRadius="4"
+                    Padding="4"
+                    Margin="8,0,0,0"
+                    VerticalAlignment="Center"
+                    Cursor="Hand">
+                <material:MaterialIcon Kind="Close" Width="14" Height="14" Opacity="0.7" />
+            </Button>
+        </Grid>
+    </Border>
+
+</UserControl>

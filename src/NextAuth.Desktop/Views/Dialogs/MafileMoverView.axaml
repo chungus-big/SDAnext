@@ -1,0 +1,109 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:NextAuth.Core.ViewModel.MafileMover;assembly=NextAuth.Core"
+             xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             mc:Ignorable="d"
+             x:Class="NextAuth.Desktop.Views.Dialogs.MafileMoverView"
+             x:DataType="vm:MafileMoverVM"
+             MinWidth="420" MaxWidth="460">
+
+    <UserControl.DataTemplates>
+        <!-- Step 1: Auth -->
+        <DataTemplate DataType="vm:MafileMoverAuthStepVM">
+            <StackPanel Spacing="12">
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                    <material:MaterialIcon Kind="Login" Width="20" Height="20" VerticalAlignment="Center" />
+                    <TextBlock Text="{Binding $parent[UserControl].((vm:MafileMoverVM)DataContext).Loc[LinkerDialog.Authorization]}"
+                               FontSize="15" FontWeight="SemiBold" VerticalAlignment="Center" />
+                </StackPanel>
+                <TextBox PlaceholderText="{Binding $parent[UserControl].((vm:MafileMoverVM)DataContext).Loc[LinkerDialog.Login]}" Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBox PlaceholderText="{Binding $parent[UserControl].((vm:MafileMoverVM)DataContext).Loc[LinkerDialog.Password]}" PasswordChar="●" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" />
+                <Button Content="{Binding $parent[UserControl].((vm:MafileMoverVM)DataContext).Loc[LinkerDialog.ProceedButton]}"
+                        Command="{Binding NextCommand}" HorizontalAlignment="Center" Margin="0,10,0,0" />
+            </StackPanel>
+        </DataTemplate>
+
+        <!-- Step 2: Guard Code -->
+        <DataTemplate DataType="vm:MafileMoverGuardCodeStepVM">
+            <StackPanel Spacing="12">
+                <TextBox PlaceholderText="{Binding $parent[UserControl].((vm:MafileMoverVM)DataContext).Loc[LinkerDialog.Code]}"
+                         Text="{Binding GuardCode, UpdateSourceTrigger=PropertyChanged}" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                    <Button Content="{Binding $parent[UserControl].((vm:MafileMoverVM)DataContext).Loc[LinkerDialog.CancelButton]}"
+                            Command="{Binding CancelCommand}" />
+                    <Button Content="{Binding $parent[UserControl].((vm:MafileMoverVM)DataContext).Loc[LinkerDialog.ProceedButton]}"
+                            Command="{Binding NextCommand}" />
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+
+        <!-- Step 3: SMS Code -->
+        <DataTemplate DataType="vm:MafileMoverSmsStepVM">
+            <StackPanel Spacing="12">
+                <TextBox PlaceholderText="{Binding $parent[UserControl].((vm:MafileMoverVM)DataContext).Loc[LinkerDialog.SmsCode]}"
+                         Text="{Binding SmsCode, UpdateSourceTrigger=PropertyChanged}" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                    <Button Content="{Binding $parent[UserControl].((vm:MafileMoverVM)DataContext).Loc[LinkerDialog.CancelButton]}"
+                            Command="{Binding CancelCommand}" />
+                    <Button Content="{Binding $parent[UserControl].((vm:MafileMoverVM)DataContext).Loc[LinkerDialog.ProceedButton]}"
+                            Command="{Binding NextCommand}" />
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+
+        <!-- Step 4: Done -->
+        <DataTemplate DataType="vm:MafileMoverDoneStepVM">
+            <StackPanel Spacing="14">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="6">
+                    <material:MaterialIcon Kind="CheckCircleOutline" Width="28" Height="28" Foreground="{DynamicResource NextSuccessBrush}" VerticalAlignment="Center" />
+                    <TextBlock Text="{Binding $parent[UserControl].((vm:MafileMoverVM)DataContext).Loc[MafileMoverView.Done]}"
+                               FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center" />
+                </StackPanel>
+                <Border Background="#18FFFFFF" CornerRadius="8" Padding="12" BorderBrush="#33FFFFFF" BorderThickness="1">
+                    <TextBlock Text="{Binding InnerTip}" TextWrapping="Wrap" FontSize="14" />
+                </Border>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="10">
+                    <Button Content="{Binding $parent[UserControl].((vm:MafileMoverVM)DataContext).Loc[LinkerDialog.CopyRCodeButton]}"
+                            Command="{Binding CopyCodeCommand}" />
+                    <Button Content="{Binding $parent[UserControl].((vm:MafileMoverVM)DataContext).Loc[LinkerDialog.FinishButton]}"
+                            Command="{Binding NextCommand}" />
+                </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.DataTemplates>
+
+    <Border Padding="24">
+        <StackPanel Spacing="14">
+            <!-- Header -->
+            <Grid ColumnDefinitions="*,Auto">
+                <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                    <material:MaterialIcon Kind="FileMove" Width="22" Height="22" VerticalAlignment="Center" />
+                    <TextBlock Text="{Binding Loc[MafileMoverView.Title]}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" />
+                </StackPanel>
+                <Button Grid.Column="1" x:Name="CloseButton" ToolTip.Tip="{Binding Loc[Common.Close]}" Padding="6,2" Background="Transparent" BorderThickness="0">
+                    <material:MaterialIcon Kind="Close" Width="16" Height="16" />
+                </Button>
+            </Grid>
+
+            <!-- Tip Box -->
+            <Border Background="#201E88E5" BorderBrush="{DynamicResource NextAccentBrush}" BorderThickness="1"
+                    CornerRadius="8" Padding="10"
+                    IsVisible="{Binding Tip, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+                <TextBlock Text="{Binding Tip}" TextWrapping="Wrap" FontSize="13" />
+            </Border>
+
+            <!-- Step Content -->
+            <ContentControl Content="{Binding CurrentStep}" Margin="0,6" />
+
+            <!-- Error Box -->
+            <Border Background="#20E53935" BorderBrush="{DynamicResource NextErrorBrush}" BorderThickness="1"
+                    CornerRadius="8" Padding="10"
+                    IsVisible="{Binding Error, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+                <TextBlock Text="{Binding Error}" TextWrapping="Wrap" FontSize="13" Foreground="{DynamicResource NextErrorBrush}" />
+            </Border>
+
+        </StackPanel>
+    </Border>
+</UserControl>

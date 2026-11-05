@@ -1,0 +1,6 @@
+<Project>
+    <PropertyGroup>
+        <!-- Suppress offline NuGet vulnerability audit warning NU1900 and C# 13 recommendation MVVMTK0042 for .NET 8 / C# 12 target -->
+        <NoWarn>$(NoWarn);NU1900;MVVMTK0042</NoWarn>
+    </PropertyGroup>
+</Project>

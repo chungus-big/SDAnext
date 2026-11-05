@@ -1,0 +1,208 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+        xmlns:controls="clr-namespace:NextAuth.Desktop.Controls"
+        xmlns:entities="clr-namespace:NextAuth.Core.Model.Entities;assembly=NextAuth.Core"
+        xmlns:confirmations="clr-namespace:SteamLib.SteamMobile.Confirmations.Concrete;assembly=SteamLibForked"
+        xmlns:vm="clr-namespace:NextAuth.Core.ViewModel;assembly=NextAuth.Core"
+        xmlns:converters="clr-namespace:NextAuth.Desktop.Converters"
+        xmlns:core="clr-namespace:NextAuth.Core;assembly=NextAuth.Core"
+        xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        x:Class="NextAuth.Desktop.Views.MainWindow"
+        x:DataType="vm:MainVM"
+        Title="SDAnext"
+        Icon="/Assets/favicon.ico"
+        Width="730" Height="800" MinWidth="240" MinHeight="320"
+        WindowStartupLocation="CenterScreen"
+        FontSize="14"
+        DragDrop.AllowDrop="True"
+        Background="{DynamicResource NextBackgroundBrush}">
+
+    <Window.Resources>
+        <converters:ConfirmationTitleConverter x:Key="ConfirmationTitleConverter" />
+    </Window.Resources>
+
+    <Grid>
+        <dialogHost:DialogHost x:Name="DialogHostControl" Identifier="MainDialogHost"
+                               dialogHost:DialogHostStyle.CornerRadius="0"
+                               dialogHost:DialogHostStyle.BorderBrush="{DynamicResource NextAccentBrush}"
+                               dialogHost:DialogHostStyle.BorderThickness="0 1 0 0"
+                               dialogHost:DialogHostStyle.ClipToBounds="True">
+            <Grid RowDefinitions="Auto,*,Auto">
+
+            <!-- Toolbar -->
+            <DockPanel Grid.Row="0" Margin="0 0 0 6">
+                <Menu DockPanel.Dock="Left">
+                    <MenuItem Header="{Binding Loc[MainWindow.Menu.File.Caption]}">
+                        <MenuItem Header="{Binding Loc[MainWindow.Menu.File.Import]}" Command="{Binding AddMafileCommand}" />
+                        <MenuItem Header="{Binding Loc[MainWindow.Menu.File.Remove]}" Command="{Binding RemoveMafileCommand}" />
+                        <MenuItem Header="{Binding Loc[MainWindow.Menu.File.OpenFolder]}" Command="{Binding OpenMafileFolderCommand}" />
+                        <MenuItem Header="{Binding Loc[MainWindow.Menu.File.Settings]}" Command="{Binding OpenSettingsDialogCommand}" />
+                        <MenuItem Header="{Binding Loc[MainWindow.Menu.File.Other.SetPasswords]}" Command="{Binding OpenSetPasswordsDialogCommand}" />
+                        <MenuItem Header="{Binding Loc[MainWindow.Menu.File.Other.OpenExport]}" Command="{Binding OpenExporterDialogCommand}" />
+                    </MenuItem>
+                    <MenuItem Header="{Binding Loc[MainWindow.Menu.Account.Caption]}">
+                        <MenuItem Header="{Binding Loc[MainWindow.Menu.Account.Link]}" Command="{Binding LinkAccountCommand}" />
+                        <MenuItem Header="{Binding Loc[MainWindow.Menu.Account.MoveSteamGuard]}" Command="{Binding MoveAccountCommand}" />
+                        <MenuItem Header="{Binding Loc[MainWindow.Menu.Account.Unlink]}" Command="{Binding RemoveAuthenticatorCommand}" />
+                        <MenuItem Header="{Binding Loc[MainWindow.Menu.Account.RefreshSession]}" Command="{Binding RefreshSessionCommand}" />
+                        <MenuItem Header="{Binding Loc[MainWindow.Menu.Account.LoginAgain]}" Command="{Binding LoginAgainCommand}" />
+                    </MenuItem>
+                    <MenuItem Header="{Binding Loc[MainWindow.Menu.Help.Caption]}">
+                        <MenuItem Header="{Binding Loc[MainWindow.Menu.Help.Links]}" Command="{Binding OpenLinksViewCommand}" />
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+
+            <!-- Main content -->
+            <Grid Grid.Row="1" ColumnDefinitions="0.4*,0.6*">
+
+                <!-- Accounts list -->
+                <Grid Grid.Column="0" Margin="0,0,5,5"
+                      Background="{DynamicResource NextPanelBrush}">
+                    <ListBox x:Name="MafileListBox"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             ItemsSource="{Binding MaFiles}"
+                             SelectedItem="{Binding SelectedMafile}"
+                             SelectionMode="Single"
+                             KeyDown="MafileListBox_OnKeyDown">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type entities:Mafile}">
+                                <Border Background="Transparent"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        PointerPressed="MafileItem_OnPointerPressed">
+                                    <Border.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="{Binding $parent[Window].((vm:MainVM)DataContext).Loc[MainWindow.ContextMenus.Mafile.CopyLogin]}"
+                                                      Command="{Binding $parent[Window].((vm:MainVM)DataContext).CopyLoginCommand}"
+                                                      CommandParameter="{Binding}" />
+                                            <MenuItem Header="{Binding $parent[Window].((vm:MainVM)DataContext).Loc[MainWindow.ContextMenus.Mafile.CopySteamId]}"
+                                                      Command="{Binding $parent[Window].((vm:MainVM)DataContext).CopySteamIdCommand}"
+                                                      CommandParameter="{Binding}" />
+                                            <MenuItem Header="{Binding $parent[Window].((vm:MainVM)DataContext).Loc[MainWindow.ContextMenus.Mafile.CopyPassword]}"
+                                                      Command="{Binding $parent[Window].((vm:MainVM)DataContext).CopyPasswordCommand}"
+                                                      CommandParameter="{Binding}" />
+                                            <MenuItem Header="{Binding $parent[Window].((vm:MainVM)DataContext).Loc[MainWindow.ContextMenus.Mafile.CopyMafile]}"
+                                                      Command="{Binding $parent[Window].((vm:MainVM)DataContext).CopyMafileCommand}"
+                                                      CommandParameter="{Binding}" />
+                                            <Separator />
+                                            <MenuItem Header="{Binding $parent[Window].((vm:MainVM)DataContext).Loc[MainWindow.Menu.File.OpenFolder]}"
+                                                      Command="{Binding $parent[Window].((vm:MainVM)DataContext).OpenMafileFolderCommand}"
+                                                      CommandParameter="{Binding}" />
+                                            <MenuItem Header="{Binding $parent[Window].((vm:MainVM)DataContext).Loc[MainWindow.Menu.File.Remove]}"
+                                                      Command="{Binding $parent[Window].((vm:MainVM)DataContext).RemoveMafileCommand}"
+                                                      CommandParameter="{Binding}" />
+                                        </ContextMenu>
+                                    </Border.ContextMenu>
+                                    <Grid ColumnDefinitions="*,Auto" ToolTip.Tip="{Binding Filename}">
+                                        <TextBlock Text="{Binding AccountName}" VerticalAlignment="Center" />
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+
+                <!-- Right: code + confirmations -->
+                <Grid Grid.Column="1" Margin="5,0,0,5">
+                    <Grid RowDefinitions="Auto,Auto,*,Auto" Margin="10">
+                        <TextBox x:Name="CodeBox" FontSize="26" FontWeight="Bold"
+                                 Text="{Binding Code}"
+                                 IsReadOnly="True"
+                                 HorizontalContentAlignment="Center"
+                                 Background="Transparent"
+                                 BorderThickness="0"
+                                 PointerPressed="CodeBox_OnPointerPressed">
+                            <TextBox.Styles>
+                                <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement,
+                                                 TextBox:focus /template/ Border#PART_BorderElement">
+                                    <Setter Property="Background" Value="Transparent" />
+                                    <Setter Property="BoxShadow" Value="none" />
+                                </Style>
+                            </TextBox.Styles>
+                        </TextBox>
+                        <ProgressBar Grid.Row="1" Height="4" IsIndeterminate="False"
+                                     Maximum="30"
+                                     Value="{Binding CodeProgress}" />
+                        <Grid Grid.Row="2" RowDefinitions="Auto,Auto,*" Margin="0,12,0,8">
+                            <Button Grid.Row="0" Padding="10" HorizontalAlignment="Center"
+                                    Margin="0,0,0,8"
+                                    Content="{Binding Loc[MainWindow.RightPart.LoadConfirmations]}"
+                                    Command="{Binding GetConfirmationsCommand}" />
+                            <ProgressBar Grid.Row="1" Height="3" IsIndeterminate="True"
+                                         Margin="30,0,30,8"
+                                         IsVisible="{Binding IsLoadingConfirmations}" />
+                            <TextBlock Grid.Row="2"
+                                       Text="{Binding Loc[MainWindow.RightPart.NoConfirmations]}"
+                                       FontSize="12" Opacity="0.6"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                                       IsVisible="{Binding NoConfirmationsVisible}" />
+                            <ScrollViewer Grid.Row="2" IsVisible="{Binding ConfirmationsVisible}">
+                                <ItemsControl ItemsSource="{Binding Confirmations}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate DataType="{x:Type confirmations:Confirmation}">
+                                            <Border Margin="0,2,0,2" Padding="8,6" Background="{DynamicResource NextPanelBrush}">
+                                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                                    <StackPanel VerticalAlignment="Center">
+                                                        <TextBlock FontWeight="SemiBold" FontSize="13">
+                                                            <TextBlock.Text>
+                                                                <MultiBinding Converter="{StaticResource ConfirmationTitleConverter}">
+                                                                    <Binding />
+                                                                    <Binding Path="CurrentLanguage" Source="{x:Static core:LocalizationSource.Instance}" />
+                                                                </MultiBinding>
+                                                            </TextBlock.Text>
+                                                        </TextBlock>
+                                                        <TextBlock Text="{Binding HeadLine}" FontSize="11" Opacity="0.8" TextTrimming="CharacterEllipsis" />
+                                                    </StackPanel>
+                                                    <Button Grid.Column="1" Margin="4,0" Padding="8,4"
+                                                            Command="{Binding $parent[Window].((vm:MainVM)DataContext).ConfirmCommand}"
+                                                            CommandParameter="{Binding}">
+                                                        <material:MaterialIcon Kind="Check" Width="14" Height="14" Foreground="{DynamicResource NextSuccessBrush}" />
+                                                    </Button>
+                                                    <Button Grid.Column="2" Margin="4,0" Padding="8,4"
+                                                            Command="{Binding $parent[Window].((vm:MainVM)DataContext).CancelCommand}"
+                                                            CommandParameter="{Binding}">
+                                                        <material:MaterialIcon Kind="Close" Width="14" Height="14" Foreground="{DynamicResource NextErrorBrush}" />
+                                                    </Button>
+                                                </Grid>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                        </Grid>
+                        <Button Padding="10" Grid.Row="3" Content="{Binding Loc[MainWindow.RightPart.ConfirmLogin]}"
+                                Command="{Binding ConfirmLoginCommand}"
+                                IsEnabled="{Binding IsMafileSelected}"
+                                HorizontalAlignment="Center" />
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <!-- Footer -->
+            <Grid Grid.Row="2" ColumnDefinitions="*,Auto" Margin="10,0,10,6">
+                <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Loc[MainWindow.Footer.AccountsCount]}" />
+                    <TextBlock Text="{Binding MaFiles.Count}" />
+                    <TextBlock Text=" | " />
+                    <TextBlock Text="{Binding Loc[MainWindow.Footer.SelectedAccount]}" />
+                    <TextBlock Text="{Binding SelectedMafile.AccountName}" />
+                </StackPanel>
+                <TextBlock Grid.Column="1" Text="chungus-big" FontSize="13"
+                           Foreground="{DynamicResource NextAccentBrush}" VerticalAlignment="Center"
+                           Cursor="Hand" ToolTip.Tip="{Binding Loc[MainWindow.Menu.Help.Links]}"
+                           PointerPressed="LinksText_OnPointerPressed" />
+            </Grid>
+        </Grid>
+    </dialogHost:DialogHost>
+
+    <!-- Floating Snackbar Overlay: positioned above footer without affecting layout -->
+    <controls:SnackbarView x:Name="Snackbar"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Bottom"
+                           Margin="16,0,16,36"
+                           ZIndex="100" />
+</Grid>
+</Window>

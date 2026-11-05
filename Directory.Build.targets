@@ -1,0 +1,4 @@
+<Project>
+    <!-- Override Avalonia telemetry stats task to ensure offline / sandbox builds never fail on ~/.local IO -->
+    <Target Name="AvaloniaStats" />
+</Project>

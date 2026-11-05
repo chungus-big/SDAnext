@@ -1,0 +1,40 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:NextAuth.Core.ViewModel.Other;assembly=NextAuth.Core"
+             x:Class="NextAuth.Desktop.Views.Dialogs.MafileImportDialogView"
+             x:DataType="vm:MafileImportDialogVM">
+    <Border Padding="24" Width="460">
+        <StackPanel Spacing="12">
+            <TextBlock Text="{Binding Loc[MafileImportDialog.Title]}" FontWeight="SemiBold" FontSize="16" />
+
+            <Border Background="{DynamicResource NextPanelBrush}"
+                    BorderBrush="{DynamicResource NextBorderBrush}"
+                    BorderThickness="1"
+                    CornerRadius="6" Padding="12">
+                <Grid ColumnDefinitions="*,Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="{Binding Loc[MafileImportDialog.TotalCount]}" />
+                    <TextBlock Grid.Column="1" Text="{Binding TotalCount}" FontWeight="SemiBold" />
+
+                    <TextBlock Grid.Row="1" Text="{Binding Loc[MafileImportDialog.ConflictCount]}"
+                               IsVisible="{Binding HasConflicts}" />
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ConflictCount}"
+                               IsVisible="{Binding HasConflicts}"
+                               FontWeight="SemiBold" Foreground="{DynamicResource NextWarningBrush}" />
+                </Grid>
+            </Border>
+
+            <CheckBox Content="{Binding Loc[MafileImportDialog.OverwriteConflicts]}"
+                      IsChecked="{Binding OverwriteConflicts}"
+                      IsVisible="{Binding HasConflicts}" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,8,0,0">
+                <Button x:Name="CancelButton" Content="{Binding Loc[Common.Cancel]}" IsCancel="True" />
+                <Button x:Name="OkButton" Content="{Binding Loc[Common.OK]}" IsDefault="True" />
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

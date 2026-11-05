@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/NextAuth.Core/NextAuth.Core.csproj" />
+    <Project Path="src/NextAuth.Desktop/NextAuth.Desktop.csproj" />
+    <Project Path="src/SteamLibForked/SteamLibForked.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SteamLib.Tests/SteamLib.Tests.csproj" />
+  </Folder>
+</Solution>

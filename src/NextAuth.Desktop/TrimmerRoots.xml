@@ -1,0 +1,20 @@
+<linker>
+  <assembly fullname="NextAuth.Core">
+    <type fullname="*" preserve="all" />
+  </assembly>
+  <assembly fullname="SteamLibForked">
+    <type fullname="*" preserve="all" />
+  </assembly>
+  <assembly fullname="NextAuth.Desktop">
+    <type fullname="*" preserve="all" />
+  </assembly>
+  <assembly fullname="SDAnext">
+    <type fullname="*" preserve="all" />
+  </assembly>
+  <assembly fullname="protobuf-net">
+    <type fullname="*" preserve="all" />
+  </assembly>
+  <assembly fullname="protobuf-net.Core">
+    <type fullname="*" preserve="all" />
+  </assembly>
+</linker>

@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="0" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CantAlignTimeError" xml:space="preserve">
+    <value>Не удается синхронизировать время со Steam. Возможно отсутствует подключение к интернету или Steam недоступен.</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_AuthenticatorPresent" xml:space="preserve">
+    <value>Аутентификатор привязан</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_BadConfirmationCode" xml:space="preserve">
+    <value>Код не подошел</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_CantAttachPhone" xml:space="preserve">
+    <value>Не удается привязать телефон</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_CantConfirmAttachingEmail" xml:space="preserve">
+    <value>Не удалось подтвердить письмо</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_CantSendSms" xml:space="preserve">
+    <value>Не удалось отправить SMS</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_GeneralFailure" xml:space="preserve">
+    <value>Общая ошибка</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_InvalidPhoneNumber" xml:space="preserve">
+    <value>Неверный номер телефона</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_InvalidStateWithStatus2" xml:space="preserve">
+    <value>Неверное состояние (InvalidState) со статусом 2. Откройте ссылку на руководство сверху этого окна.</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_PhoneAlreadyAttached" xml:space="preserve">
+    <value>Телефон привязан, попробуйте через 20 минут</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_UnableToGenerateCorrectCodes" xml:space="preserve">
+    <value>Не удается сгенерировать коды</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_AccountDeleted" xml:space="preserve">
+    <value>Аккаунт удален (114)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_AccountDisabled" xml:space="preserve">
+    <value>Аккаунт отключен (43)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_AccountLimitExceeded" xml:space="preserve">
+    <value>Лимит аккаунта превышен (95)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_AccountLockedDown" xml:space="preserve">
+    <value>Аккаунт заблокирован (КТ 73)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_AccountNotFound" xml:space="preserve">
+    <value>Аккаунт не найден (18)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Banned" xml:space="preserve">
+    <value>Забанен (17)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Blocked" xml:space="preserve">
+    <value>Заблокировано (40)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Cancelled" xml:space="preserve">
+    <value>Отмена (52)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Disabled" xml:space="preserve">
+    <value>Отключено (80)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_EmailSendFailure" xml:space="preserve">
+    <value>Не удалось отправить письмо (99)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Expired" xml:space="preserve">
+    <value>Истекло (27)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_ExpiredLoginAuthCode" xml:space="preserve">
+    <value>Истекло время кода (71)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_IPBanned" xml:space="preserve">
+    <value>IP заблокирован (105)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_InvalidLoginAuthCode" xml:space="preserve">
+    <value>Неверный код авторизации (65)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_InvalidPassword" xml:space="preserve">
+    <value>Неверный пароль</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_InvalidState" xml:space="preserve">
+    <value>Неверное состояние (11)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_InvalidSteamID" xml:space="preserve">
+    <value>Неправильный SteamID (19)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_LimitExceeded" xml:space="preserve">
+    <value>Лимит превышен (25)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_LimitedUserAccount" xml:space="preserve">
+    <value>Аккаунт с лимитом (112)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_NeedCaptcha" xml:space="preserve">
+    <value>Капча (101)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Pending" xml:space="preserve">
+    <value>Ожидание (21)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_PhoneNumberIsVOIP" xml:space="preserve">
+    <value>Номера VOIP запрещены (127)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_RateLimitExceeded" xml:space="preserve">
+    <value>Слишком много запросов (84)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_RegionLocked" xml:space="preserve">
+    <value>Регион заблокирован (83)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_SMSCodeFailed" xml:space="preserve">
+    <value>Ошибка SMS-кода (94)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_ServiceUnavailable" xml:space="preserve">
+    <value>Сервер не отвечает (20)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Suspended" xml:space="preserve">
+    <value>Отключено (Suspended 51)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_TimeNotSynced" xml:space="preserve">
+    <value>Время не синхронизировано (93)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Timeout" xml:space="preserve">
+    <value>Таймаут (16)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_TwoFactorActivationCodeMismatch" xml:space="preserve">
+    <value>2FA код не прошел проверку (89)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_TwoFactorCodeMismatch" xml:space="preserve">
+    <value>2FA код не подошел (88)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_UnexpectedError" xml:space="preserve">
+    <value>Неожиданная ошибка (79)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_Login_CaptchaRequired" xml:space="preserve">
+    <value>Капча</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_Login_EmailAuthRequired" xml:space="preserve">
+    <value>Требуется код с почты</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_Login_InvalidCredentials" xml:space="preserve">
+    <value>Неверный пароль</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_Login_InvalidEmailAuthCode" xml:space="preserve">
+    <value>Неверный код с почты</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_Login_InvalidTwoFactorCode" xml:space="preserve">
+    <value>Неверный двухфакторный код</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_Login_UndefinedError" xml:space="preserve">
+    <value>Неизвестная ошибка</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_CantLoadConfirmationsException_Common" xml:space="preserve">
+    <value>Не удалось загрузить потверждения из-за ошибки Steam: </value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_CantLoadConfirmationsException_NotSetupToReceiveConfirmations" xml:space="preserve">
+    <value>Аккаунт не настроен на получение подтверждений</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_CantLoadConfirmationsException_TryAgainLater" xml:space="preserve">
+    <value>Попробуйте позже</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_LoginException" xml:space="preserve">
+    <value>Ошибка входа: </value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_SessionExpiredException" xml:space="preserve">
+    <value>Сессия полностью истекла. Нужно залогиниться заново (Аккаунт → Войти)</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_SessionInvalidException" xml:space="preserve">
+    <value>Сессия истекла. Попробуйте обновить ее или залогиниться заново (Аккаунт → войти)</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_TaskCanceledException" xml:space="preserve">
+    <value>Произошла отмена операции</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_TimeoutException" xml:space="preserve">
+    <value>Таймаут подключения. Проверьте ваше соединение с интернетом</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_UnknownException" xml:space="preserve">
+    <value>Неизвестная ошибка: </value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_UnsupportedAuthTypeException_Guard" xml:space="preserve">
+    <value>Ошибка: Был запрошен вход с помощью Steam Guard. На аккаунте уже активирован мобильный аутентификатор</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_UnsupportedAuthTypeException_Mail" xml:space="preserve">
+    <value>Ошибка: Был запрошен код с почты. Steam Guard не активирован</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_UnsupportedAuthTypeException_Unknown" xml:space="preserve">
+    <value>Ошибка: Неизвестный тип аутентификации</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_UnsupportedResponseException" xml:space="preserve">
+    <value>Получен неожиданный ответ от Steam. Свяжитесь с разработчиком</value>
+  </data>
+  <data name="CodeBehind_LinkVM_CantLogin" xml:space="preserve">
+    <value>Не удалось залогиниться: </value>
+  </data>
+  <data name="CodeBehind_LinkVM_ClickOnEmailLink" xml:space="preserve">
+    <value>На почту было отправлено письмо, откройте ссылку из письма, а затем нажмите — 'Продолжить'</value>
+  </data>
+  <data name="CodeBehind_LinkVM_ClickOnEmailLinkRetry" xml:space="preserve">
+    <value>Не удалось подтвердить переход по ссылке. Убедитесь, что вы открыли ссылку из письма, затем нажмите — 'Продолжить'</value>
+  </data>
+  <data name="CodeBehind_LinkVM_EnterEmailCode" xml:space="preserve">
+    <value>Введите код, отправленный на вашу почту</value>
+  </data>
+  <data name="CodeBehind_LinkVM_EnterLoginAndPassword" xml:space="preserve">
+    <value>Введите логин и пароль</value>
+  </data>
+  <data name="CodeBehind_LinkVM_EnterPhoneNumber" xml:space="preserve">
+    <value>Введите номер в международном формате, только цифры (без '+', пробелов и скобок), или оставьте поле пустым, чтобы привязать без номера</value>
+  </data>
+  <data name="CodeBehind_LinkVM_ErrorWithCode" xml:space="preserve">
+    <value>Ошибка с кодом: </value>
+  </data>
+  <data name="CodeBehind_LinkVM_MafileLinked" xml:space="preserve">
+    <value>RCode: {0}
+Имя файла: {1}.mafile</value>
+  </data>
+  <data name="CodeBehind_LinkVM_PhoneHint" xml:space="preserve">
+    <value>На телефон {0} была отправлена СМС</value>
+  </data>
+  <data name="CodeBehind_LinkVM_UnknownError" xml:space="preserve">
+    <value>Неизвестная ошибка: </value>
+  </data>
+  <data name="CodeBehind_LinkVM_UnsupportedGuardType" xml:space="preserve">
+    <value>Steam Guard уже активирован. Был запрошен код с мобильного устройства</value>
+  </data>
+  <data name="CodeBehind_MafileExporterVM_Result_Conflict" xml:space="preserve">
+    <value>. Конфликты: {0}</value>
+  </data>
+  <data name="CodeBehind_MafileExporterVM_Result_Exported" xml:space="preserve">
+    <value>Экспортировано: {0}</value>
+  </data>
+  <data name="CodeBehind_MafileExporterVM_Result_NotFound" xml:space="preserve">
+    <value>. Не найдено: {0}</value>
+  </data>
+  <data name="CodeBehind_MafileExporter_AccessDenied" xml:space="preserve">
+    <value>Недостаточно прав для записи в указанную папку. Проверьте права доступа или выберите другой путь.</value>
+  </data>
+  <data name="CodeBehind_MafileExporter_InvalidPath" xml:space="preserve">
+    <value>Указан некорректный путь для экспорта.</value>
+  </data>
+  <data name="CodeBehind_MafileExporter_NextUtilizedDirectory" xml:space="preserve">
+    <value>Невозможно выполнить экспорт в папку, которая используется приложением. Рекомендуется выбрать отдельную директорию.</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_DoneStepTip" xml:space="preserve">
+    <value>RCode: {0}
+Имя файла: {1}.mafile</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_EnterGuardCode" xml:space="preserve">
+    <value>Введите код Steam Guard либо подтвердите вход и нажмите "Продолжить"</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_EnterGuardCodeRetrying" xml:space="preserve">
+    <value>Не удалось подтвердить вход. Введите код Steam Guard или попробуйте еще раз</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_GuardIsNotActive" xml:space="preserve">
+    <value>Steam Guard НЕ установлен на данном аккаунте. Чтобы привязать mafile к аккаунту, воспользуйтесь окном "Привязать"</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_SeemsNoPhoneNumber" xml:space="preserve">
+    <value>На аккаунте не привязан номер телефона, был возвращен код Fail (2)</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_SmsCodeFailed" xml:space="preserve">
+    <value>Ошибка SMS-кода, попробуйте еще раз</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_SmsCodeStepTip" xml:space="preserve">
+    <value>Введите код из СМС, отправленный на ваш номер телефона</value>
+  </data>
+  <data name="CodeBehind_MainVM_AuthenticatorNotRemoved" xml:space="preserve">
+    <value>Что-то пошло не так</value>
+  </data>
+  <data name="CodeBehind_MainVM_AuthenticatorRemoved" xml:space="preserve">
+    <value>Аутентификатор удален</value>
+  </data>
+  <data name="CodeBehind_MainVM_CantDecryptPassword" xml:space="preserve">
+    <value>Не удалось расшифровать пароль. Возможно пароль из этого мафайла был зашифрован другим паролем шифрования</value>
+  </data>
+  <data name="CodeBehind_MainVM_CantRemoveAlreadyExist" xml:space="preserve">
+    <value>Не удалось переместить mafile, возможно в папке уже существует мафайл с таким именем.</value>
+  </data>
+  <data name="CodeBehind_MainVM_CantRemoveMafile" xml:space="preserve">
+    <value>Не удалось удалить (переместить) мафайл:</value>
+  </data>
+  <data name="CodeBehind_MainVM_CantRetrieveSteamIDToUpdate" xml:space="preserve">
+    <value>Не удалось получить SteamID из мафайла и сохранить изменения. Необходимо сделать релогин. Отменено</value>
+  </data>
+  <data name="CodeBehind_MainVM_ConfirmLoginFailedMoreThanOneRequest" xml:space="preserve">
+    <value>Обнаружено несколько запросов на вход. В целях безопасности операция отменена</value>
+  </data>
+  <data name="CodeBehind_MainVM_ConfirmLoginFailedNoRequests" xml:space="preserve">
+    <value>Запросов на вход не обнаружено</value>
+  </data>
+  <data name="CodeBehind_MainVM_ConfirmLoginSuccess" xml:space="preserve">
+    <value>Вход осуществлен:</value>
+  </data>
+  <data name="CodeBehind_MainVM_ConfirmRemovingAuthenticator" xml:space="preserve">
+    <value>Вы точно уверены, что хотите удалить аутентификатор?
+После этого вы не сможете обмениваться, использовать торговую площадку 15 дней. Мафайл будет удалён навсегда</value>
+  </data>
+  <data name="CodeBehind_MainVM_ConfirmationError" xml:space="preserve">
+    <value>Ошибка подтверждения</value>
+  </data>
+  <data name="CodeBehind_MainVM_Import" xml:space="preserve">
+    <value>Импорт</value>
+  </data>
+  <data name="CodeBehind_MainVM_ImportAdded" xml:space="preserve">
+    <value>добавлено:</value>
+  </data>
+  <data name="CodeBehind_MainVM_ImportErrors" xml:space="preserve">
+    <value>ошибки:</value>
+  </data>
+  <data name="CodeBehind_MainVM_ImportSkipped" xml:space="preserve">
+    <value>пропущено:</value>
+  </data>
+  <data name="CodeBehind_MainVM_LoginCopied" xml:space="preserve">
+    <value>Логин скопирован</value>
+  </data>
+  <data name="CodeBehind_MainVM_MafileCopied" xml:space="preserve">
+    <value>Мафайл скопирован</value>
+  </data>
+  <data name="CodeBehind_MainVM_MafileImportError" xml:space="preserve">
+    <value>Ошибка при импорте мафайла</value>
+  </data>
+  <data name="CodeBehind_MainVM_MafileNotCopied" xml:space="preserve">
+    <value>Мафайл не скопирован</value>
+  </data>
+  <data name="CodeBehind_MainVM_MissingRCode" xml:space="preserve">
+    <value>Отсутствует RCode</value>
+  </data>
+  <data name="CodeBehind_MainVM_MissingSessionInMafile" xml:space="preserve">
+    <value>. У него отсутствует сессия. Добавьте этот файл отдельно от остальных</value>
+  </data>
+  <data name="CodeBehind_MainVM_PasswordCopied" xml:space="preserve">
+    <value>Пароль скопирован</value>
+  </data>
+  <data name="CodeBehind_MainVM_RemoveMafileConfirmation" xml:space="preserve">
+    <value>Удалить mafile?
+Мафайл будет перемещен в папку 'mafiles_removed'
+Это действие НЕ удаляет Steam Guard с аккаунта</value>
+  </data>
+  <data name="CodeBehind_MainVM_SdaManifestEntryNotFound" xml:space="preserve">
+    <value>Выбранный manifest.json не содержит запись для этого .mafile.</value>
+  </data>
+  <data name="CodeBehind_MainVM_SdaWrongPassword" xml:space="preserve">
+    <value>Неверный пароль SDA. Попробуйте снова.</value>
+  </data>
+  <data name="CodeBehind_MainVM_SessionRefreshed" xml:space="preserve">
+    <value>Сессия обновлена</value>
+  </data>
+  <data name="CodeBehind_MainVM_SteamIdCopied" xml:space="preserve">
+    <value>SteamID скопирован</value>
+  </data>
+  <data name="CodeBehind_MainVM_SuccessfulLogin" xml:space="preserve">
+    <value>Успешный вход</value>
+  </data>
+  <data name="CodeBehind_SessionHandler_SessionWasRefreshedAutomatically" xml:space="preserve">
+    <value>Сессия была обновлена автоматически</value>
+  </data>
+  <data name="CodeBehind_SetAccountPasswordsVM_PartialSuccess" xml:space="preserve">
+    <value>Успешно: {0}, Не найдено: {1}, Ошибки: {2}</value>
+  </data>
+  <data name="CodeBehind_SetAccountPasswordsVM_Success" xml:space="preserve">
+    <value>Пароли успешно установлены для {0} мафайлов</value>
+  </data>
+  <data name="CodeBehind_SettingsVM_MafileRenaming_AllRenamed" xml:space="preserve">
+    <value>Все мафайлы успешно переименованы ({0}).
+Была создана резервная копия: {1}</value>
+  </data>
+  <data name="CodeBehind_SettingsVM_MafileRenaming_Error" xml:space="preserve">
+    <value>Ошибка при переименовании мафайлов. Она была сохранена в log</value>
+  </data>
+  <data name="CodeBehind_SettingsVM_MafileRenaming_PartialSuccess" xml:space="preserve">
+    <value>Всего мафайлов: {0}
+Переименовано: {1}
+Конфликты: {2}
+Ошибок: {3}
+
+Резервная копия мафайлов сохранена в файле: {4}</value>
+  </data>
+  <data name="CodeBehind_Settings_ErrorWhileLoadingSettings" xml:space="preserve">
+    <value>Ошибка при загрузке настроек. Настройки были сброшены</value>
+  </data>
+  <data name="Common_Abbreviations_Count_Items" xml:space="preserve">
+    <value>шт</value>
+  </data>
+  <data name="Common_Abbreviations_Time_Seconds" xml:space="preserve">
+    <value>сек</value>
+  </data>
+  <data name="Common_Apply" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="Common_Browse" xml:space="preserve">
+    <value>Обзор</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="Common_Canceled" xml:space="preserve">
+    <value>Отменено</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="Common_Confirmation" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="Common_EnterValidNumber" xml:space="preserve">
+    <value>Введите корректное число</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="Common_FieldCannotBeEmpty" xml:space="preserve">
+    <value>Поле не может быть пустым</value>
+  </data>
+  <data name="Common_Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="Common_MasterPassword" xml:space="preserve">
+    <value>Мастер-пароль</value>
+  </data>
+  <data name="Common_No" xml:space="preserve">
+    <value>Нет</value>
+  </data>
+  <data name="Common_OK" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="Common_RequestError" xml:space="preserve">
+    <value>Ошибка запроса</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="Common_Set" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="Common_Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="ConfirmCancelDialog_Title" xml:space="preserve">
+    <value>Подтвердите действие</value>
+  </data>
+  <data name="ExportDialog_AccountsPlaceholder" xml:space="preserve">
+    <value>По одному аккаунту на строку (оставьте пустым для всех)</value>
+  </data>
+  <data name="ExportDialog_AccountsToExport" xml:space="preserve">
+    <value>Аккаунты для экспорта (пусто = все):</value>
+  </data>
+  <data name="ExportDialog_ExportAccountsPlaceholder" xml:space="preserve">
+    <value>Введите логины или SteamID (по одному на строку). Поддерживается формат логин:пароль — пароль будет проигнорирован. Оставьте пустым для экспорта всех аккаунтов.</value>
+  </data>
+  <data name="ExportDialog_ExportButton" xml:space="preserve">
+    <value>Экспорт</value>
+  </data>
+  <data name="ExportDialog_ExportFolderPlaceholder" xml:space="preserve">
+    <value>Папка для экспорта</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_ExportToZip" xml:space="preserve">
+    <value>Экспортировать в ZIP архив</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_IncludeIdentitySecret" xml:space="preserve">
+    <value>Включать identity secret</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_IncludeOtherInfo" xml:space="preserve">
+    <value>Включать прочую информацию</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_IncludeRCode" xml:space="preserve">
+    <value>Включать RCode</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_IncludeSessionData" xml:space="preserve">
+    <value>Включать данные сессии</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_IncludeSharedSecret" xml:space="preserve">
+    <value>Включать shared secret</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_NextPassword" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_UseLoginAsMafileName" xml:space="preserve">
+    <value>Использовать логин как имя mafile</value>
+  </data>
+  <data name="ExportDialog_ExportSettingsCommon" xml:space="preserve">
+    <value>Основные:</value>
+  </data>
+  <data name="ExportDialog_ExportSettingsHeader" xml:space="preserve">
+    <value>Настройки экспорта</value>
+  </data>
+  <data name="ExportDialog_ExportSettingsNext" xml:space="preserve">
+    <value>Next:</value>
+  </data>
+  <data name="ExportDialog_ExportTitle" xml:space="preserve">
+    <value>Экспорт</value>
+  </data>
+  <data name="ExportDialog_SelectPathHint" xml:space="preserve">
+    <value>Выберите путь</value>
+  </data>
+  <data name="ExportDialog_TemplateHint" xml:space="preserve">
+    <value>Шаблон</value>
+  </data>
+  <data name="ExportDialog_Tooltips_AddTemplate" xml:space="preserve">
+    <value>Добавить шаблон</value>
+  </data>
+  <data name="ExportDialog_Tooltips_DeleteTemplate" xml:space="preserve">
+    <value>Удалить шаблон</value>
+  </data>
+  <data name="ExportDialog_Tooltips_EditTemplate" xml:space="preserve">
+    <value>Редактировать шаблон</value>
+  </data>
+  <data name="ExportDialog_Tooltips_ExportToZip" xml:space="preserve">
+    <value>Экспортировать в ZIP архив вместо папки. Архив будет сохранён в выбранной директории с именем вида N_timestamp.zip.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_IncludeIdentitySecret" xml:space="preserve">
+    <value>Включает identity_secret и device_id. Необходимы для отправки подтверждений и дают доступ к трейдам и торговой площадке.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_IncludeOtherInfo" xml:space="preserve">
+    <value>Включает дополнительные необязательные поля, которые в данный момент не используются Steam, но могут применяться в будущем и содержать чувствительную информацию.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_IncludeRCode" xml:space="preserve">
+    <value>Код восстановления. Позволяет отвязать Steam Guard от аккаунта в случае потери доступа.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_IncludeSessionData" xml:space="preserve">
+    <value>Включает данные текущей сессии. Если сессия активна и не истекла, позволяет получить доступ к аккаунту без ввода пароля с помощью mafile.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_IncludeSharedSecret" xml:space="preserve">
+    <value>Позволяет генерировать коды подтверждения и входить в аккаунт при наличии пароля или активной сессии.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_NextPassword" xml:space="preserve">
+    <value>Включить Next-совместимые данные пароля.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_UseLoginAsMafileName" xml:space="preserve">
+    <value>Использовать логин аккаунта в качестве имени mafile.</value>
+  </data>
+  <data name="LanguageName" xml:space="preserve">
+    <value>Русский</value>
+  </data>
+  <data name="LanguageWord" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="LinkerDialog_Authorization" xml:space="preserve">
+    <value>Вход в аккаунт</value>
+  </data>
+  <data name="LinkerDialog_CancelButton" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="LinkerDialog_Code" xml:space="preserve">
+    <value>Код</value>
+  </data>
+  <data name="LinkerDialog_Completed" xml:space="preserve">
+    <value>Завершено</value>
+  </data>
+  <data name="LinkerDialog_CopyRCodeButton" xml:space="preserve">
+    <value>Скопировать RCode</value>
+  </data>
+  <data name="LinkerDialog_EmailCode" xml:space="preserve">
+    <value>Код из письма</value>
+  </data>
+  <data name="LinkerDialog_EmailLink" xml:space="preserve">
+    <value>Ссылка из email</value>
+  </data>
+  <data name="LinkerDialog_FinishButton" xml:space="preserve">
+    <value>Завершить</value>
+  </data>
+  <data name="LinkerDialog_Login" xml:space="preserve">
+    <value>Логин</value>
+  </data>
+  <data name="LinkerDialog_MafileLinked" xml:space="preserve">
+    <value>Мафайл успешно привязан</value>
+  </data>
+  <data name="LinkerDialog_Message" xml:space="preserve">
+    <value>Сообщение:</value>
+  </data>
+  <data name="LinkerDialog_Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="LinkerDialog_PhoneNumber" xml:space="preserve">
+    <value>Номер телефона</value>
+  </data>
+  <data name="LinkerDialog_ProceedButton" xml:space="preserve">
+    <value>Продолжить</value>
+  </data>
+  <data name="LinkerDialog_SmsCode" xml:space="preserve">
+    <value>СМС код</value>
+  </data>
+  <data name="LinkerDialog_SmsOrCode" xml:space="preserve">
+    <value>СМС или код</value>
+  </data>
+  <data name="LinkerDialog_Title" xml:space="preserve">
+    <value>Привязка</value>
+  </data>
+  <data name="LinksView_Documentation" xml:space="preserve">
+    <value>Документация</value>
+  </data>
+  <data name="LinksView_UsefulLinks" xml:space="preserve">
+    <value>Полезные ссылки</value>
+  </data>
+  <data name="LoginAgainDialog_CancelButton" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="LoginAgainDialog_LoginButton" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="LoginAgainDialog_LoginFor" xml:space="preserve">
+    <value>Войти в</value>
+  </data>
+  <data name="LoginAgainDialog_PasswordBox" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="LoginAgainDialog_SaveEncryptedPassword" xml:space="preserve">
+    <value>Сохранить зашифрованный пароль в мафайл</value>
+  </data>
+  <data name="LoginAgainDialog_Title" xml:space="preserve">
+    <value>Вход</value>
+  </data>
+  <data name="MafileImportDialog_ConflictCount" xml:space="preserve">
+    <value>Уже существуют</value>
+  </data>
+  <data name="MafileImportDialog_OverwriteConflicts" xml:space="preserve">
+    <value>Перезаписать конфликтующие мафайлы</value>
+  </data>
+  <data name="MafileImportDialog_Title" xml:space="preserve">
+    <value>Импорт мафайлов</value>
+  </data>
+  <data name="MafileImportDialog_TotalCount" xml:space="preserve">
+    <value>Мафайлов к импорту</value>
+  </data>
+  <data name="MafileMoverView_Done" xml:space="preserve">
+    <value>Steam Guard перенесен</value>
+  </data>
+  <data name="MafileMoverView_Title" xml:space="preserve">
+    <value>Перенести Steam Guard</value>
+  </data>
+  <data name="MainWindow_CodeCopied" xml:space="preserve">
+    <value>Скопировано</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_ApiKey" xml:space="preserve">
+    <value>Api ключ</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_CancelAll" xml:space="preserve">
+    <value>Отклонить все</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_CancelOne" xml:space="preserve">
+    <value>Отклонить этот предмет</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_ConfirmAll" xml:space="preserve">
+    <value>Подтвердить все</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_ConfirmOne" xml:space="preserve">
+    <value>Подтвердить этот предмет</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_ItemsCount" xml:space="preserve">
+    <value>Предметов: {0}</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_Market" xml:space="preserve">
+    <value>Продажа</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_MarketMulti" xml:space="preserve">
+    <value>Несколько лотов</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_Purchase" xml:space="preserve">
+    <value>Покупка</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_Recovery" xml:space="preserve">
+    <value>Восстановление</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_Trade" xml:space="preserve">
+    <value>Обмен</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_TradeWith" xml:space="preserve">
+    <value>Трейд с</value>
+  </data>
+  <data name="MainWindow_ContextMenus_Mafile_CopyLogin" xml:space="preserve">
+    <value>Скопировать логин</value>
+  </data>
+  <data name="MainWindow_ContextMenus_Mafile_CopyMafile" xml:space="preserve">
+    <value>Скопировать мафайл</value>
+  </data>
+  <data name="MainWindow_ContextMenus_Mafile_CopyPassword" xml:space="preserve">
+    <value>Скопировать пароль</value>
+  </data>
+  <data name="MainWindow_ContextMenus_Mafile_CopySteamId" xml:space="preserve">
+    <value>Скопировать SteamID</value>
+  </data>
+  <data name="MainWindow_Footer_AccountsCount" xml:space="preserve">
+    <value>Аккаунты: </value>
+  </data>
+  <data name="MainWindow_Footer_SelectedAccount" xml:space="preserve">
+    <value>Текущий: </value>
+  </data>
+  <data name="MainWindow_Global_DragNDropHint" xml:space="preserve">
+    <value>Отпустите для импорта мафайлов</value>
+  </data>
+  <data name="MainWindow_Global_LoadingHint" xml:space="preserve">
+    <value>Загрузка...</value>
+  </data>
+  <data name="MainWindow_LeftPart_NoMafiles" xml:space="preserve">
+    <value>Мафайлы не найдены..</value>
+  </data>
+  <data name="MainWindow_Menu_Account_Caption" xml:space="preserve">
+    <value>Аккаунт</value>
+  </data>
+  <data name="MainWindow_Menu_Account_Link" xml:space="preserve">
+    <value>Привязать</value>
+  </data>
+  <data name="MainWindow_Menu_Account_LoginAgain" xml:space="preserve">
+    <value>Войти</value>
+  </data>
+  <data name="MainWindow_Menu_Account_MoveSteamGuard" xml:space="preserve">
+    <value>Перенести Steam Guard</value>
+  </data>
+  <data name="MainWindow_Menu_Account_RefreshSession" xml:space="preserve">
+    <value>Обновить сессию</value>
+  </data>
+  <data name="MainWindow_Menu_Account_Unlink" xml:space="preserve">
+    <value>Отвязать</value>
+  </data>
+  <data name="MainWindow_Menu_File_Caption" xml:space="preserve">
+    <value>Меню</value>
+  </data>
+  <data name="MainWindow_Menu_File_Import" xml:space="preserve">
+    <value>Импорт</value>
+  </data>
+  <data name="MainWindow_Menu_File_OpenFolder" xml:space="preserve">
+    <value>Открыть папку</value>
+  </data>
+  <data name="MainWindow_Menu_File_Other_OpenExport" xml:space="preserve">
+    <value>Экспорт</value>
+  </data>
+  <data name="MainWindow_Menu_File_Other_SetPasswords" xml:space="preserve">
+    <value>Назначить пароли</value>
+  </data>
+  <data name="MainWindow_Menu_File_Other_Title" xml:space="preserve">
+    <value>Прочее</value>
+  </data>
+  <data name="MainWindow_Menu_File_Remove" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="MainWindow_Menu_File_Settings" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="MainWindow_Menu_Help_Caption" xml:space="preserve">
+    <value>Справка</value>
+  </data>
+  <data name="MainWindow_Menu_Help_Link" xml:space="preserve">
+    <value>Ссылки</value>
+  </data>
+  <data name="MainWindow_Menu_Help_Links" xml:space="preserve">
+    <value>Ссылки</value>
+  </data>
+  <data name="MainWindow_RightPart_ConfirmLogin" xml:space="preserve">
+    <value>Подтвердить вход</value>
+  </data>
+  <data name="MainWindow_RightPart_LoadConfirmations" xml:space="preserve">
+    <value>Загрузить подтверждения</value>
+  </data>
+  <data name="MainWindow_RightPart_NoConfirmations" xml:space="preserve">
+    <value>Нет подтверждений</value>
+  </data>
+  <data name="SdaPasswordDialog_ManifestEntryNotFound" xml:space="preserve">
+    <value>Выбранный manifest.json не содержит запись для этого mafile.</value>
+  </data>
+  <data name="SdaPasswordDialog_ManifestMissing" xml:space="preserve">
+    <value>Похоже, этот mafile зашифрован SDA, но manifest.json не найден. Выберите manifest.json от SDA, чтобы продолжить.</value>
+  </data>
+  <data name="SdaPasswordDialog_Message" xml:space="preserve">
+    <value>Этот mafile зашифрован Steam Desktop Authenticator. Введите пароль шифрования SDA для импорта.</value>
+  </data>
+  <data name="SdaPasswordDialog_PasswordHint" xml:space="preserve">
+    <value>Пароль шифрования SDA</value>
+  </data>
+  <data name="SdaPasswordDialog_Title" xml:space="preserve">
+    <value>Пароль шифрования SDA</value>
+  </data>
+  <data name="SdaPasswordDialog_WrongPassword" xml:space="preserve">
+    <value>Неверный пароль SDA. Попробуйте снова.</value>
+  </data>
+  <data name="SetAccountPasswordsView_EncryptionHint" xml:space="preserve">
+    <value>Все пароли в мафайлах будут зашифрованы с помощью пароля шифрования.</value>
+  </data>
+  <data name="SetAccountPasswordsView_EncryptionPassword" xml:space="preserve">
+    <value>Пароль шифрования:</value>
+  </data>
+  <data name="SetAccountPasswordsView_EnterCredentials" xml:space="preserve">
+    <value>Введите данные (логин:пароль по одной строке):</value>
+  </data>
+  <data name="SetAccountPasswordsView_EnterPassword" xml:space="preserve">
+    <value>Введите пароль</value>
+  </data>
+  <data name="SetAccountPasswordsView_InputFormat" xml:space="preserve">
+    <value>Поддерживаемые форматы:
+
+login:password
+steamid:password</value>
+  </data>
+  <data name="SetAccountPasswordsView_MasterPasswordRequired" xml:space="preserve">
+    <value>Сначала необходимо установить мастер-пароль:</value>
+  </data>
+  <data name="SetAccountPasswordsView_Status" xml:space="preserve">
+    <value>Статус:</value>
+  </data>
+  <data name="SetAccountPasswordsView_Title" xml:space="preserve">
+    <value>Назначить пароли аккаунтов</value>
+  </data>
+  <data name="SetEncryptionPasswordDialog_Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="SetEncryptionPasswordDialog_DialogText" xml:space="preserve">
+    <value>Ранее вы устанавливали пароль шифрования для паролей в мафайлах, укажите его, чтобы приложение могло автоматически авторизоваться в случае проблем с сессией.
+(Не обязательно)</value>
+  </data>
+  <data name="SetEncryptionPasswordDialog_Ok" xml:space="preserve">
+    <value>Ок</value>
+  </data>
+  <data name="SetEncryptionPasswordDialog_Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="SetEncryptionPasswordDialog_Title" xml:space="preserve">
+    <value>Пароль шифрования</value>
+  </data>
+  <data name="SettingsDialog_ApplyNamingMode" xml:space="preserve">
+    <value>Применить и переименовать</value>
+  </data>
+  <data name="SettingsDialog_ConfirmImport" xml:space="preserve">
+    <value>Спрашивать подтверждение при импорте мафайлов</value>
+  </data>
+  <data name="SettingsDialog_ConfirmMafileImport" xml:space="preserve">
+    <value>Спрашивать подтверждение при импорте мафайлов</value>
+  </data>
+  <data name="SettingsDialog_ConfirmMafileImportHint" xml:space="preserve">
+    <value>Всегда показывать диалог подтверждения при импорте maFiles. Не влияет на показ окна при конфликте файлов</value>
+  </data>
+  <data name="SettingsDialog_EncryptionPassword" xml:space="preserve">
+    <value>Пароль шифрования</value>
+  </data>
+  <data name="SettingsDialog_IgnorePatchTuesdayErrors" xml:space="preserve">
+    <value>Игнорировать ошибки Patch Tuesday в таймере (эксп.)</value>
+  </data>
+  <data name="SettingsDialog_IgnorePatchTuesdayErrorsHint" xml:space="preserve">
+    <value>Игнорировать ошибки, которые возникают каждый вторник (ночь среды по GMT) когда Steam проводит технические работы и автоподтверждения отключаются без надобности</value>
+  </data>
+  <data name="SettingsDialog_Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="SettingsDialog_MafileNamingMode" xml:space="preserve">
+    <value>Режим именования мафайлов</value>
+  </data>
+  <data name="SettingsDialog_MasterPassword" xml:space="preserve">
+    <value>Мастер-пароль</value>
+  </data>
+  <data name="SettingsDialog_PasswordBox_CurrentCryptPassword" xml:space="preserve">
+    <value>Текущий пароль шифрования</value>
+  </data>
+  <data name="SettingsDialog_PasswordBox_Hint" xml:space="preserve">
+    <value>Не сохраняется в системе</value>
+  </data>
+  <data name="SettingsDialog_Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="SettingsDialog_SeparateMarketConfirmations" xml:space="preserve">
+    <value>Отображать лоты Маркета по отдельности</value>
+  </data>
+  <data name="SettingsDialog_Title" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="TextFieldDialog_Title" xml:space="preserve">
+    <value>Введите значение</value>
+  </data>
+  <data name="WaitLoginDialog_Text" xml:space="preserve">
+    <value>Производится логин. Ожидайте</value>
+  </data>
+</root>

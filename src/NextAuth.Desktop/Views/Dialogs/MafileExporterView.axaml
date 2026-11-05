@@ -1,0 +1,87 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:NextAuth.Core.ViewModel.Other;assembly=NextAuth.Core"
+             xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             mc:Ignorable="d"
+             x:Class="NextAuth.Desktop.Views.Dialogs.MafileExporterView"
+             x:DataType="vm:MafileExporterVM"
+             MinWidth="480" MaxWidth="520">
+
+    <Border Padding="24">
+        <StackPanel Spacing="14">
+            <!-- Header -->
+            <Grid ColumnDefinitions="*,Auto">
+                <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                    <material:MaterialIcon Kind="FileExport" Width="22" Height="22" VerticalAlignment="Center" />
+                    <TextBlock Text="{Binding Loc[ExportDialog.ExportTitle]}" FontSize="18" FontWeight="Bold" VerticalAlignment="Center" />
+                </StackPanel>
+                <Button Grid.Column="1" x:Name="CloseButton" ToolTip.Tip="{Binding Loc[Common.Close]}" Padding="6,2" Background="Transparent" BorderThickness="0">
+                    <material:MaterialIcon Kind="Close" Width="16" Height="16" />
+                </Button>
+            </Grid>
+
+            <!-- Template selection -->
+            <Grid ColumnDefinitions="*,Auto,Auto,Auto">
+                <ComboBox ItemsSource="{Binding Templates}"
+                          SelectedItem="{Binding CurrentTemplate}"
+                          HorizontalAlignment="Stretch">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate DataType="vm:MafileExportTemplateVM">
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Grid.Column="1" Margin="4,0" Command="{Binding AddTemplateCommand}" ToolTip.Tip="{Binding Loc[ExportDialog.Tooltips.AddTemplate]}">
+                    <material:MaterialIcon Kind="Plus" Width="16" Height="16" />
+                </Button>
+                <Button Grid.Column="2" Margin="4,0" Command="{Binding ToggleEditModeCommand}" ToolTip.Tip="{Binding Loc[ExportDialog.Tooltips.EditTemplate]}">
+                    <material:MaterialIcon Kind="Pencil" Width="16" Height="16" />
+                </Button>
+                <Button Grid.Column="3" Margin="4,0" Command="{Binding RemoveCurrentTemplateCommand}" ToolTip.Tip="{Binding Loc[ExportDialog.Tooltips.DeleteTemplate]}">
+                    <material:MaterialIcon Kind="Delete" Width="16" Height="16" />
+                </Button>
+            </Grid>
+
+            <!-- Template details -->
+            <StackPanel Spacing="8" IsVisible="{Binding CurrentTemplate, Converter={x:Static ObjectConverters.IsNotNull}}">
+                <!-- Path -->
+                <Grid ColumnDefinitions="*,Auto">
+                    <TextBox PlaceholderText="{Binding Loc[ExportDialog.ExportFolderPlaceholder]}" Text="{Binding CurrentTemplate.Path}" IsReadOnly="True" />
+                    <Button Grid.Column="1" Margin="8,0,0,0" Content="{Binding Loc[Common.Browse]}" Command="{Binding OpenSelectDirectoryDialogCommand}" />
+                </Grid>
+
+                <!-- Checkboxes -->
+                <WrapPanel Orientation="Horizontal">
+                    <CheckBox Content="{Binding Loc[ExportDialog.ExportOptions.UseLoginAsMafileName]}" ToolTip.Tip="{Binding Loc[ExportDialog.Tooltips.UseLoginAsMafileName]}" IsChecked="{Binding CurrentTemplate.UseLoginAsMafileName}" Margin="0,0,12,0" />
+                    <CheckBox Content="{Binding Loc[ExportDialog.ExportOptions.ExportToZip]}" ToolTip.Tip="{Binding Loc[ExportDialog.Tooltips.ExportToZip]}" IsChecked="{Binding CurrentTemplate.ExportToZip}" Margin="0,0,12,0" />
+                    <CheckBox Content="{Binding Loc[ExportDialog.ExportOptions.IncludeSharedSecret]}" ToolTip.Tip="{Binding Loc[ExportDialog.Tooltips.IncludeSharedSecret]}" IsChecked="{Binding CurrentTemplate.IncludeSharedSecret}" Margin="0,0,12,0" />
+                    <CheckBox Content="{Binding Loc[ExportDialog.ExportOptions.IncludeIdentitySecret]}" ToolTip.Tip="{Binding Loc[ExportDialog.Tooltips.IncludeIdentitySecret]}" IsChecked="{Binding CurrentTemplate.IncludeIdentitySecret}" Margin="0,0,12,0" />
+                    <CheckBox Content="{Binding Loc[ExportDialog.ExportOptions.IncludeRCode]}" ToolTip.Tip="{Binding Loc[ExportDialog.Tooltips.IncludeRCode]}" IsChecked="{Binding CurrentTemplate.IncludeRCode}" Margin="0,0,12,0" />
+                    <CheckBox Content="{Binding Loc[ExportDialog.ExportOptions.IncludeSessionData]}" ToolTip.Tip="{Binding Loc[ExportDialog.Tooltips.IncludeSessionData]}" IsChecked="{Binding CurrentTemplate.IncludeSessionData}" Margin="0,0,12,0" />
+                    <CheckBox Content="{Binding Loc[ExportDialog.ExportOptions.NextPassword]}" ToolTip.Tip="{Binding Loc[ExportDialog.Tooltips.NextPassword]}" IsChecked="{Binding CurrentTemplate.IncludeNextPassword}" Margin="0,0,12,0" />
+                </WrapPanel>
+
+                <!-- Accounts filter -->
+                <TextBlock Text="{Binding Loc[ExportDialog.AccountsToExport]}" Opacity="0.7" FontSize="12" Margin="0,4,0,0" />
+                <TextBox Height="80" AcceptsReturn="True" TextWrapping="Wrap"
+                         PlaceholderText="{Binding Loc[ExportDialog.AccountsPlaceholder]}"
+                         ToolTip.Tip="{Binding Loc[ExportDialog.ExportAccountsPlaceholder]}"
+                         Text="{Binding AccountsText}" />
+
+                <!-- Hint/Error -->
+                <Border Background="#20E53935" BorderBrush="{DynamicResource NextErrorBrush}" BorderThickness="1"
+                        CornerRadius="8" Padding="8"
+                        IsVisible="{Binding HintText, Converter={x:Static StringConverters.IsNotNullOrEmpty}}">
+                    <TextBlock Text="{Binding HintText}" TextWrapping="Wrap" FontSize="12" />
+                </Border>
+
+                <!-- Export button -->
+                <Button Content="{Binding Loc[ExportDialog.ExportButton]}"
+                        Command="{Binding ExportCommand}"
+                        HorizontalAlignment="Center" Margin="0,8,0,0" />
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

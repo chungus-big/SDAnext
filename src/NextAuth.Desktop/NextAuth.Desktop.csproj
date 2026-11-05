@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RollForward>LatestMajor</RollForward>
+        <AssemblyName>SDAnext</AssemblyName>
+        <RootNamespace>NextAuth.Desktop</RootNamespace>
+        <ApplicationIcon>Assets/favicon.ico</ApplicationIcon>
+        <AssemblyTitle>SDAnext</AssemblyTitle>
+        <Product>SDAnext</Product>
+        <Version>1.0.0</Version>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <!-- Publish configuration: Single-File Self-Contained is the default for maximum Linux portability (glibc 2.16+) -->
+        <PublishSingleFile Condition="'$(PublishSingleFile)' == ''">true</PublishSingleFile>
+        <SelfContained Condition="'$(SelfContained)' == ''">true</SelfContained>
+        <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+        <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+
+        <!-- Native AOT can be enabled explicitly with -p:PublishAot=true -->
+        <PublishAot Condition="'$(PublishAot)' == ''">false</PublishAot>
+        <IlcTrimReflection>false</IlcTrimReflection>
+        <IlcGenerateCompleteTypeMetadata>true</IlcGenerateCompleteTypeMetadata>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <TrimmerRootDescriptor Include="TrimmerRoots.xml" />
+        <TrimmerRootAssembly Include="NextAuth.Core" />
+        <TrimmerRootAssembly Include="SteamLibForked" />
+        <TrimmerRootAssembly Include="protobuf-net" />
+        <TrimmerRootAssembly Include="protobuf-net.Core" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="12.1.4" />
+        <PackageReference Include="Avalonia.Desktop" Version="12.1.4" />
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="12.1.4" />
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="12.1.4" />
+        <PackageReference Include="Material.Icons.Avalonia" Version="3.0.2" />
+        <PackageReference Include="DialogHost.Avalonia" Version="0.12.3" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\NextAuth.Core\NextAuth.Core.csproj" />
+        <ProjectReference Include="..\SteamLibForked\SteamLibForked.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <AvaloniaResource Include="Assets\**" />
+    </ItemGroup>
+
+</Project>

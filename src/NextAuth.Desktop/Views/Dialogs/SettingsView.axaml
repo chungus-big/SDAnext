@@ -1,0 +1,75 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:NextAuth.Core.ViewModel.Other;assembly=NextAuth.Core"
+             xmlns:material="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             mc:Ignorable="d"
+             x:Class="NextAuth.Desktop.Views.Dialogs.SettingsView"
+             x:DataType="vm:SettingsVM">
+
+    <UserControl.Styles>
+        <Style Selector="ToggleButton#RevealPasswordToggle:pointerover material|MaterialIcon">
+            <Setter Property="Opacity" Value="1.0" />
+        </Style>
+    </UserControl.Styles>
+
+    <Border
+            MinWidth="420"
+            MaxWidth="520">
+        <StackPanel Spacing="16">
+            <TextBlock Text="{Binding Loc[SettingsDialog.Title]}" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" />
+
+            <StackPanel Spacing="6">
+                <TextBlock Text="{Binding Loc[SettingsDialog.Language]}" Opacity="0.7" FontSize="12" />
+                <ComboBox ItemsSource="{Binding Languages}"
+                          SelectedItem="{Binding SelectedLanguage}"
+                          DisplayMemberBinding="{Binding Value}"
+                          HorizontalAlignment="Stretch" />
+            </StackPanel>
+
+            <CheckBox Content="{Binding Loc[SettingsDialog.ConfirmImport]}" IsChecked="{Binding ConfirmMafileImport}" />
+            <CheckBox Content="{Binding Loc[SettingsDialog.SeparateMarketConfirmations]}" IsChecked="{Binding SeparateMarketConfirmations}" />
+
+            <StackPanel Spacing="6">
+                <TextBlock Text="{Binding Loc[SettingsDialog.EncryptionPassword]}" Opacity="0.7" FontSize="12" />
+                <Grid ColumnDefinitions="*,Auto">
+                    <TextBox x:Name="MasterPasswordBox"
+                             Text="{Binding Password}"
+                             PlaceholderText="{Binding Loc[Common.MasterPassword]}"
+                             PasswordChar="*"
+                             RevealPassword="{Binding #RevealPasswordToggle.IsChecked, Mode=OneWay, FallbackValue=False}">
+                        <TextBox.InnerRightContent>
+                            <ToggleButton x:Name="RevealPasswordToggle"
+                                          Background="Transparent"
+                                          BorderThickness="0"
+                                          Padding="4"
+                                          Margin="0,0,4,0"
+                                          Focusable="False"
+                                          Cursor="Hand">
+                                <ToggleButton.Template>
+                                    <ControlTemplate TargetType="ToggleButton">
+                                        <Border Background="Transparent" Padding="{TemplateBinding Padding}">
+                                            <ContentPresenter Content="{TemplateBinding Content}" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </ToggleButton.Template>
+                                <Panel>
+                                    <material:MaterialIcon Kind="Eye" Width="16" Height="16" Opacity="0.7"
+                                                           IsVisible="{Binding #RevealPasswordToggle.IsChecked, FallbackValue=False}" />
+                                    <material:MaterialIcon Kind="EyeOff" Width="16" Height="16" Opacity="0.7"
+                                                           IsVisible="{Binding !#RevealPasswordToggle.IsChecked, FallbackValue=True}" />
+                                </Panel>
+                            </ToggleButton>
+                        </TextBox.InnerRightContent>
+                    </TextBox>
+                    <Button Grid.Column="1" Margin="8,0,0,0" Content="{Binding Loc[SettingsDialog.Save]}" Command="{Binding SetPasswordCommand}" />
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,16,0,0">
+                <Button x:Name="CloseButton" Content="{Binding Loc[Common.Close]}" />
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

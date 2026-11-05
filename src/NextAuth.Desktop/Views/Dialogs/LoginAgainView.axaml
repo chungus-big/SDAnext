@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:NextAuth.Core.ViewModel.Other;assembly=NextAuth.Core"
+             x:Class="NextAuth.Desktop.Views.Dialogs.LoginAgainView"
+             x:DataType="vm:LoginAgainVM">
+    <Border Padding="24" Width="400">
+        <StackPanel Spacing="12">
+            <TextBlock Text="{Binding UserName}" FontWeight="SemiBold" FontSize="14" />
+            <TextBlock Text="{Binding Loc[LoginAgainDialog.Title]}" FontSize="12" Opacity="0.6" />
+
+            <TextBox Text="{Binding Password}" PlaceholderText="{Binding Loc[LoginAgainDialog.PasswordBox]}" PasswordChar="●" />
+
+            <CheckBox Content="{Binding Loc[LoginAgainDialog.SaveEncryptedPassword]}" IsChecked="{Binding SavePassword}" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+                <Button x:Name="CancelButton" Content="{Binding Loc[Common.Cancel]}" IsCancel="True" />
+                <Button x:Name="OkButton" Content="{Binding Loc[LoginAgainDialog.LoginButton]}" IsDefault="True" />
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

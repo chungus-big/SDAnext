@@ -1,0 +1,174 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dialogHost="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
+             xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             x:Class="NextAuth.Desktop.App"
+             RequestedThemeVariant="Dark">
+
+    <Application.Styles>
+        <FluentTheme />
+        <dialogHost:DialogHostStyles />
+        <materialIcons:MaterialIconStyles />
+
+        <Style Selector="dialogHost|DialogHost">
+            <Setter Property="Background" Value="{DynamicResource NextBackgroundBrush}" />
+            <Setter Property="dialogHost:DialogHostStyle.ClipToBounds" Value="True" />
+        </Style>
+
+        <Style Selector="ProgressBar">
+            <Setter Property="Foreground" Value="{DynamicResource NextAccentBrush}" />
+        </Style>
+
+        <Style Selector="ContextMenu > Separator, MenuFlyoutPresenter Separator">
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        </Style>
+
+        <Style Selector="Menu > MenuItem MenuItem, ContextMenu > MenuItem">
+            <Setter Property="Background" Value="{DynamicResource MenuFlyoutPresenterBackground}" />
+        </Style>
+
+        <Style Selector="
+          Menu > MenuItem MenuItem:selected /template/ Border#PART_LayoutRoot,
+          Menu > MenuItem MenuItem:pointerover /template/ Border#PART_LayoutRoot,
+          ContextMenu > MenuItem:selected /template/ Border#PART_LayoutRoot,
+          ContextMenu > MenuItem:pointerover /template/ Border#PART_LayoutRoot">
+            <Setter Property="Background" Value="{DynamicResource MenuHoverBackground}" />
+        </Style>
+
+        <Style Selector="
+          Menu > MenuItem MenuItem:selected /template/ ContentPresenter#PART_HeaderPresenter,
+          Menu > MenuItem MenuItem:pointerover /template/ ContentPresenter#PART_HeaderPresenter,
+          ContextMenu > MenuItem:selected /template/ ContentPresenter#PART_HeaderPresenter,
+          ContextMenu > MenuItem:pointerover /template/ ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutPresenterBackground}" />
+        </Style>
+
+        <Style Selector="
+          Menu > MenuItem MenuItem:disabled /template/ Border#PART_LayoutRoot,
+          ContextMenu > MenuItem:disabled /template/ Border#PART_LayoutRoot,
+          CheckBox /template/ Border#NormalRectangle,
+          CheckBox:checked /template/ Border#NormalRectangle">
+            <Setter Property="Background" Value="{DynamicResource MenuFlyoutPresenterBackground}" />
+        </Style>
+        <Style Selector="
+          Menu > MenuItem MenuItem:disabled /template/ ContentPresenter#PART_HeaderPresenter,
+          ContextMenu > MenuItem:disabled /template/ ContentPresenter#PART_HeaderPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundDisabled}" />
+        </Style>
+
+        <Style Selector="ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#323a4b" />
+        </Style>
+        <Style Selector="ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter,
+                         ListBoxItem:selected:not(:focus) /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#3e4e69" />
+        </Style>
+        <Style Selector="ListBoxItem:selected:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#586f96" />
+        </Style>
+
+        <Style Selector="TextBox, CheckBox, ComboBox">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+        </Style>
+
+        <Style Selector="TextBox, ComboBox, Button">
+            <Setter Property="Background" Value="{DynamicResource ButtonBackground}" />
+        </Style>
+
+        <Style Selector="TextBox /template/ Border#PART_BorderElement,
+                         CheckBox /template/ Border#PART_Border,
+                         CheckBox /template/ Border#NormalRectangle,
+                         ComboBox /template/ Border#Background,
+                         ComboBox /template/ Border#PopupBorder">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+        </Style>
+
+        <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ButtonBackgroundPointerOver}" />
+        </Style>
+        <Style Selector="Button:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ButtonBackgroundPressed}" />
+        </Style>
+
+        <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="{DynamicResource ControlPointerOverBackground}" />
+        </Style>
+        <Style Selector="TextBox:focus /template/ Border#PART_BorderElement,
+                         TextBox:focus:pointerover /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="{DynamicResource NextPanelBrush}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BoxShadow" Value="inset 0 1 3 0 #80000000" />
+        </Style>
+
+        <Style Selector="CheckBox:pointerover /template/ Border#NormalRectangle,
+                         CheckBox:checked:pointerover /template/ Border#NormalRectangle">
+            <Setter Property="Background" Value="{DynamicResource CheckBoxPointerOverBackground}" />
+        </Style>
+        <Style Selector="CheckBox:checked /template/ Path#CheckGlyph,
+                         CheckBox:checked:pointerover /template/ Path#CheckGlyph">
+            <Setter Property="Fill" Value="{DynamicResource NextAccentBrush}" />
+        </Style>
+
+        <Style Selector="ComboBox:pressed /template/ Border#Background,
+                         ComboBox[IsDropDownOpen=True] /template/ Border#Background">
+            <Setter Property="Background" Value="{DynamicResource ButtonBackground}" />
+        </Style>
+        <Style Selector="ComboBox:pointerover /template/ Border#Background">
+            <Setter Property="Background" Value="{DynamicResource ButtonBackgroundPointerOver}" />
+        </Style>
+        <Style Selector="ComboBox /template/ Border#PopupBorder">
+            <Setter Property="Background" Value="{DynamicResource ComboBoxPopupBackground}" />
+        </Style>
+
+        <Style Selector="ComboBoxItem:selected /template/ ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+        <Style Selector="ComboBoxItem:focus /template/ ContentPresenter,
+                         ComboBoxItem:pointerover /template/ ContentPresenter,
+                         ComboBoxItem:selected:focus /template/ ContentPresenter,
+                         ComboBoxItem:selected:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ComboBoxItemHoverBackground}" />
+        </Style>
+    </Application.Styles>
+
+    <Application.Resources>
+        <CornerRadius x:Key="OverlayCornerRadius">0</CornerRadius>
+        <Thickness x:Key="MenuFlyoutPresenterBorderThemeThickness">0</Thickness>
+        <Thickness x:Key="MenuFlyoutPresenterThemePadding">0</Thickness>
+        <Thickness x:Key="MenuFlyoutScrollerMargin">0</Thickness>
+        <Thickness x:Key="ComboBoxDropdownContentMargin">0</Thickness>
+        <Thickness x:Key="CheckBoxBorderThemeThickness">0</Thickness>
+        <SolidColorBrush x:Key="MenuFlyoutPresenterBackground">#3d4450</SolidColorBrush>
+        <SolidColorBrush x:Key="MenuFlyoutItemForegroundDisabled">#70798c</SolidColorBrush>
+        <SolidColorBrush x:Key="MenuHoverBackground">#dcdedf</SolidColorBrush>
+
+        <SolidColorBrush x:Key="ComboBoxDropDownGlyphForeground">#279cfb</SolidColorBrush>
+        <SolidColorBrush x:Key="ComboBoxPopupBackground">#373c44</SolidColorBrush>
+        <SolidColorBrush x:Key="ComboBoxItemHoverBackground">#3e444d</SolidColorBrush>
+        <SolidColorBrush x:Key="ControlPointerOverBackground">#363a43</SolidColorBrush>
+        <SolidColorBrush x:Key="CheckBoxPointerOverBackground">#67707b</SolidColorBrush>
+
+        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUnchecked">#3d4450</SolidColorBrush>
+        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedPointerOver">#67707b</SolidColorBrush>
+        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedPressed">#3d4450</SolidColorBrush>
+        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked">#3d4450</SolidColorBrush>
+        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver">#67707b</SolidColorBrush>
+        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPressed">#3d4450</SolidColorBrush>
+
+        <SolidColorBrush x:Key="ButtonBackground">#2e323b</SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonBackgroundPointerOver">#464d58</SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonBackgroundPressed">#24272e</SolidColorBrush>
+        <SolidColorBrush x:Key="NextBackgroundBrush">#171d25</SolidColorBrush>
+        <SolidColorBrush x:Key="NextPanelBrush">#23262e</SolidColorBrush>
+        <SolidColorBrush x:Key="NextBorderBrush">#FF44444F</SolidColorBrush>
+        <SolidColorBrush x:Key="NextAccentBrush">#279cfb</SolidColorBrush>
+        <SolidColorBrush x:Key="NextSuccessBrush">#59bd3f</SolidColorBrush>
+        <SolidColorBrush x:Key="NextWarningBrush">#ffc82c</SolidColorBrush>
+        <SolidColorBrush x:Key="NextErrorBrush">#e22a27</SolidColorBrush>
+    </Application.Resources>
+
+</Application>

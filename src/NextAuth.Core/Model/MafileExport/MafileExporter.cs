@@ -1,0 +1,185 @@
+using System.IO.Compression;
+using System.Text;
+using SteamLib.Utility;
+using NextAuth.Core.Model.Entities;
+using NextAuth.Core.Model.Mafiles;
+using SteamLib.Models.Session;
+using SteamLib.Models.SteamIds;
+
+namespace NextAuth.Core.Model.MafileExport;
+
+public static class MafileExporter
+{
+    public static async Task<ExportResult> ExportMafiles(IEnumerable<string> keys, MafileExportTemplate template)
+    {
+        if (template.Path == null || !PathIsValid(template.Path))
+        {
+            return new ExportResult(LocManager.GetCodeBehindOrDefault("InvalidPath", "MafileExporter.InvalidPath"));
+        }
+
+        if (!Directory.Exists(template.Path))
+        {
+            Directory.CreateDirectory(template.Path);
+        }
+
+        if (IsNextUtilizedDirectory(template.Path))
+        {
+            return new ExportResult(LocManager.GetCodeBehindOrDefault("NextUtilizedDirectory",
+                "MafileExporter.NextUtilizedDirectory"));
+        }
+
+        if (!IsAllowedToWrite(template.Path))
+        {
+            return new ExportResult(LocManager.GetCodeBehindOrDefault("AccessDenied", "MafileExporter.AccessDenied"));
+        }
+
+        var exported = new Dictionary<Mafile, string>();
+        var notFound = new List<string>();
+        var conflict = new List<string>();
+
+        var toExport = new List<(string key, Mafile mafile)>();
+        foreach (var key in keys)
+        {
+            SteamId? steamId = null;
+            if (SteamId64.TryParse(key, out var id64))
+                steamId = id64;
+
+            var maf = Storage.MaFiles.FirstOrDefault(m => m.AccountName.EqualsIgnoreCase(key) || m.SteamId == steamId);
+            if (maf != null)
+                toExport.Add((key, maf));
+            else
+                notFound.Add(key);
+        }
+
+        if (template.ExportToZip)
+        {
+            if (toExport.Count > 0)
+            {
+                var timestamp = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss");
+                var zipName = $"{toExport.Count}_{timestamp}.zip";
+                var zipPath = Path.Combine(template.Path, zipName);
+
+                await using var zipStream = File.Create(zipPath);
+                using var archive = new ZipArchive(zipStream, ZipArchiveMode.Create);
+                var addedEntries = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+                foreach (var (key, maf) in toExport)
+                {
+                    var (content, fileName) = BuildMafileContent(template, maf);
+                    if (!addedEntries.Add(fileName))
+                    {
+                        conflict.Add(key);
+                        continue;
+                    }
+
+                    var entry = archive.CreateEntry(fileName);
+                    await using var entryStream = entry.Open();
+                    await using var writer = new StreamWriter(entryStream, Encoding.UTF8);
+                    await writer.WriteAsync(content);
+                    exported[maf] = fileName;
+                }
+            }
+        }
+        else
+        {
+            foreach (var (key, maf) in toExport)
+            {
+                var (content, fileName) = BuildMafileContent(template, maf);
+                var fullPath = Path.Combine(template.Path, fileName);
+                if (File.Exists(fullPath))
+                {
+                    conflict.Add(key);
+                    continue;
+                }
+
+                await File.WriteAllTextAsync(fullPath, content);
+                exported[maf] = fullPath;
+            }
+        }
+
+        return new ExportResult(exported, notFound, conflict);
+    }
+
+    private static (string content, string fileName) BuildMafileContent(MafileExportTemplate template, Mafile mafile)
+    {
+        var session = template.IncludeSessionData
+            ? mafile.SessionData
+            : new MobileSessionData(null!, mafile.SteamId, default, null, tokens: null);
+
+        var serializeMaf = new Mafile
+        {
+            SharedSecret = template.IncludeSharedSecret ? mafile.SharedSecret : null!,
+            IdentitySecret = template.IncludeIdentitySecret ? mafile.IdentitySecret : null!,
+            DeviceId = template.IncludeIdentitySecret ? mafile.DeviceId : null!,
+            RevocationCode = template.IncludeRCode ? mafile.RevocationCode : null!,
+            AccountName = mafile.AccountName,
+            SessionData = session,
+            SteamId = mafile.SteamId,
+            ServerTime = template.IncludeOtherInfo ? mafile.ServerTime : 0,
+            SerialNumber = template.IncludeOtherInfo ? mafile.SerialNumber : 0,
+            Uri = template.IncludeOtherInfo ? mafile.Uri : null!,
+            TokenGid = template.IncludeOtherInfo ? mafile.TokenGid : null!,
+            Secret1 = template.IncludeOtherInfo ? mafile.Secret1 : null!,
+            Group = null!,
+            Password = template.IncludeNextPassword ? mafile.Password : null!,
+            Filename = null
+        };
+
+        var serialized = NextSerializer.SerializeMafile(serializeMaf);
+        var strategy = template.UseLoginAsMafileName ? MafileNamingStrategy.Login : MafileNamingStrategy.SteamId;
+        var fileName = strategy.GetMafileName(serializeMaf);
+        return (serialized, fileName);
+    }
+
+    private static bool PathIsValid(string path)
+    {
+        if (string.IsNullOrWhiteSpace(path)) return false;
+
+        try
+        {
+            var full = Path.GetFullPath(path);
+
+            var invalidPathChars = Path.GetInvalidPathChars();
+            if (full.IndexOfAny(invalidPathChars) >= 0) return false;
+
+            var invalidFileChars = Path.GetInvalidFileNameChars();
+
+            foreach (var part in full.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar))
+            {
+                if (string.IsNullOrEmpty(part)) continue;
+                if (part is [_, ':']) continue;
+
+                if (part.IndexOfAny(invalidFileChars) >= 0) return false;
+            }
+
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    private static bool IsAllowedToWrite(string path)
+    {
+        try
+        {
+            var testFilePath = Path.Combine(path, "test.tmp");
+            using (var fs = File.Create(testFilePath))
+            {
+            }
+
+            File.Delete(testFilePath);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    private static bool IsNextUtilizedDirectory(string path)
+    {
+        return Storage.MafilesDirectories.Any(x => Path.GetFullPath(path).EqualsIgnoreCase(x));
+    }
+}

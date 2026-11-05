@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dialogs="clr-namespace:NextAuth.Desktop.Views.Dialogs"
+             mc:Ignorable="d"
+             x:Class="NextAuth.Desktop.Views.Dialogs.LinksView"
+             x:DataType="dialogs:LinksView">
+    <Border Padding="24"
+            MinWidth="320">
+        <StackPanel Spacing="10" HorizontalAlignment="Center">
+            <TextBlock Text="{Binding Loc[LinksView.UsefulLinks]}"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       Margin="0,0,0,10" />
+
+            <Button x:Name="GitHubButton" Content="GitHub" Width="200" HorizontalContentAlignment="Center" />
+
+            <Button x:Name="CloseButton" Content="{Binding Loc[Common.Close]}" Margin="0,10,0,0" Width="100" HorizontalAlignment="Center" HorizontalContentAlignment="Center" />
+        </StackPanel>
+    </Border>
+</UserControl>

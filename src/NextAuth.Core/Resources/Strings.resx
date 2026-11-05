@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="0" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CantAlignTimeError" xml:space="preserve">
+    <value>Can't align time with Steam. Maybe no internet connection or Steam is unavailable.</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_AuthenticatorPresent" xml:space="preserve">
+    <value>Authenticator present</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_BadConfirmationCode" xml:space="preserve">
+    <value>Bad confirmation code</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_CantAttachPhone" xml:space="preserve">
+    <value>Can't attach phone</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_CantConfirmAttachingEmail" xml:space="preserve">
+    <value>Can't confirm attaching email</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_CantSendSms" xml:space="preserve">
+    <value>Can't send SMS</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_GeneralFailure" xml:space="preserve">
+    <value>General Failure</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_InvalidPhoneNumber" xml:space="preserve">
+    <value>Invalid phone number</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_InvalidStateWithStatus2" xml:space="preserve">
+    <value>Invalid state (InvalidState) with status 2. Open link to the troubleshooting guide at the top of this window.</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_PhoneAlreadyAttached" xml:space="preserve">
+    <value>Phone already attached, try again in 20 minutes</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_AuthenticatorLinkerError_UnableToGenerateCorrectCodes" xml:space="preserve">
+    <value>Unable to generate correct codes</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_AccountDeleted" xml:space="preserve">
+    <value>Account deleted (114)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_AccountDisabled" xml:space="preserve">
+    <value>Account disabled (43)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_AccountLimitExceeded" xml:space="preserve">
+    <value>Account limit exceeded (95)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_AccountLockedDown" xml:space="preserve">
+    <value>Account locked down (73)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_AccountNotFound" xml:space="preserve">
+    <value>Account not found (18)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Banned" xml:space="preserve">
+    <value>Banned (17)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Blocked" xml:space="preserve">
+    <value>Blocked (40)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Cancelled" xml:space="preserve">
+    <value>Cancelled (52)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Disabled" xml:space="preserve">
+    <value>Disabled (80)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_EmailSendFailure" xml:space="preserve">
+    <value>Email send failure (99)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Expired" xml:space="preserve">
+    <value>Expired (27)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_ExpiredLoginAuthCode" xml:space="preserve">
+    <value>Expired login auth code (71)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_IPBanned" xml:space="preserve">
+    <value>IP banned (105)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_InvalidLoginAuthCode" xml:space="preserve">
+    <value>Invalid login auth code (65)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_InvalidPassword" xml:space="preserve">
+    <value>Invalid password</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_InvalidState" xml:space="preserve">
+    <value>Invalid state (11)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_InvalidSteamID" xml:space="preserve">
+    <value>Invalid SteamID (19)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_LimitExceeded" xml:space="preserve">
+    <value>Limit exceeded (25)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_LimitedUserAccount" xml:space="preserve">
+    <value>Limited user account (112)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_NeedCaptcha" xml:space="preserve">
+    <value>Need captcha (101)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Pending" xml:space="preserve">
+    <value>Pending (21)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_PhoneNumberIsVOIP" xml:space="preserve">
+    <value>Phone number is VOIP (127)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_RateLimitExceeded" xml:space="preserve">
+    <value>Rate limit exceeded (84)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_RegionLocked" xml:space="preserve">
+    <value>Region locked (83)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_SMSCodeFailed" xml:space="preserve">
+    <value>SMS code failed (94)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_ServiceUnavailable" xml:space="preserve">
+    <value>Service unavailable (20)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Suspended" xml:space="preserve">
+    <value>Suspended (51)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_TimeNotSynced" xml:space="preserve">
+    <value>Time not synced (93)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_Timeout" xml:space="preserve">
+    <value>Timeout (16)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_TwoFactorActivationCodeMismatch" xml:space="preserve">
+    <value>2FA activation code mismatch (89)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_TwoFactorCodeMismatch" xml:space="preserve">
+    <value>2FA code mismatch (88)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_EResult_UnexpectedError" xml:space="preserve">
+    <value>Unexpected error (79)</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_Login_CaptchaRequired" xml:space="preserve">
+    <value>Captcha</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_Login_EmailAuthRequired" xml:space="preserve">
+    <value>Email code required</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_Login_InvalidCredentials" xml:space="preserve">
+    <value>Invalid password</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_Login_InvalidEmailAuthCode" xml:space="preserve">
+    <value>Invalid email code</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_Login_InvalidTwoFactorCode" xml:space="preserve">
+    <value>Invalid two factor code</value>
+  </data>
+  <data name="CodeBehind_ErrorTranslator_Login_UndefinedError" xml:space="preserve">
+    <value>Undefined error</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_CantLoadConfirmationsException_Common" xml:space="preserve">
+    <value>Can't load confirmations due to Steam error: </value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_CantLoadConfirmationsException_NotSetupToReceiveConfirmations" xml:space="preserve">
+    <value>Account is not set up to receive confirmations</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_CantLoadConfirmationsException_TryAgainLater" xml:space="preserve">
+    <value>Try again later</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_LoginException" xml:space="preserve">
+    <value>Login error: </value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_SessionExpiredException" xml:space="preserve">
+    <value>Session fully expired. Need to login again (Account → Login)</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_SessionInvalidException" xml:space="preserve">
+    <value>Session expired. Try to refresh it or login again (Account → Login)</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_TaskCanceledException" xml:space="preserve">
+    <value>Operation canceled</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_TimeoutException" xml:space="preserve">
+    <value>Connection timeout. Check your internet connection</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_UnknownException" xml:space="preserve">
+    <value>Unknown error: </value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_UnsupportedAuthTypeException_Guard" xml:space="preserve">
+    <value>Error: Login with Steam Guard was requested. Mobile authenticator is already activated on the account</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_UnsupportedAuthTypeException_Mail" xml:space="preserve">
+    <value>Error: Email code was requested. Steam Guard is not activated</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_UnsupportedAuthTypeException_Unknown" xml:space="preserve">
+    <value>Error: Unknown authentication type</value>
+  </data>
+  <data name="CodeBehind_ExceptionHandler_UnsupportedResponseException" xml:space="preserve">
+    <value>Unexpected response from Steam. Contact developer</value>
+  </data>
+  <data name="CodeBehind_LinkVM_CantLogin" xml:space="preserve">
+    <value>Can't login: </value>
+  </data>
+  <data name="CodeBehind_LinkVM_ClickOnEmailLink" xml:space="preserve">
+    <value>An email has been sent. Open the link from the email, then click 'Proceed'</value>
+  </data>
+  <data name="CodeBehind_LinkVM_ClickOnEmailLinkRetry" xml:space="preserve">
+    <value>We couldn’t verify that you clicked the link. Make sure you opened the link from the email, then click 'Proceed'</value>
+  </data>
+  <data name="CodeBehind_LinkVM_EnterEmailCode" xml:space="preserve">
+    <value>Enter the code sent to your email</value>
+  </data>
+  <data name="CodeBehind_LinkVM_EnterLoginAndPassword" xml:space="preserve">
+    <value>Enter login and password</value>
+  </data>
+  <data name="CodeBehind_LinkVM_EnterPhoneNumber" xml:space="preserve">
+    <value>Enter number in international format, digits only (no '+', spaces or brackets), or leave the field empty to link without a number</value>
+  </data>
+  <data name="CodeBehind_LinkVM_ErrorWithCode" xml:space="preserve">
+    <value>Error with code: </value>
+  </data>
+  <data name="CodeBehind_LinkVM_MafileLinked" xml:space="preserve">
+    <value>RCode: {0}
+File name: {1}.mafile</value>
+  </data>
+  <data name="CodeBehind_LinkVM_PhoneHint" xml:space="preserve">
+    <value>SMS was sent to phone {0}</value>
+  </data>
+  <data name="CodeBehind_LinkVM_UnknownError" xml:space="preserve">
+    <value>Unknown error: </value>
+  </data>
+  <data name="CodeBehind_LinkVM_UnsupportedGuardType" xml:space="preserve">
+    <value>Steam Guard already activated. Mobile device code was requested</value>
+  </data>
+  <data name="CodeBehind_MafileExporterVM_Result_Conflict" xml:space="preserve">
+    <value>. Conflicts: {0}</value>
+  </data>
+  <data name="CodeBehind_MafileExporterVM_Result_Exported" xml:space="preserve">
+    <value>Exported: {0}</value>
+  </data>
+  <data name="CodeBehind_MafileExporterVM_Result_NotFound" xml:space="preserve">
+    <value>. Not found: {0}</value>
+  </data>
+  <data name="CodeBehind_MafileExporter_AccessDenied" xml:space="preserve">
+    <value>Insufficient permissions to write to the specified directory. Please check access rights or choose another path.</value>
+  </data>
+  <data name="CodeBehind_MafileExporter_InvalidPath" xml:space="preserve">
+    <value>The specified export path is invalid.</value>
+  </data>
+  <data name="CodeBehind_MafileExporter_NextUtilizedDirectory" xml:space="preserve">
+    <value>Cannot export to a directory that is currently used by the application. Please choose a separate folder.</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_DoneStepTip" xml:space="preserve">
+    <value>RCode: {0}
+File name: {1}.mafile</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_EnterGuardCode" xml:space="preserve">
+    <value>Enter Steam Guard code or confirm login and click 'Proceed'</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_EnterGuardCodeRetrying" xml:space="preserve">
+    <value>Failed to confirm login. Enter Steam Guard code or try again</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_GuardIsNotActive" xml:space="preserve">
+    <value>Steam Guard is NOT set on this account. To link mafile to the account, use the 'Link' window</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_SeemsNoPhoneNumber" xml:space="preserve">
+    <value>The account has no phone number linked, returned Fail code (2)</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_SmsCodeFailed" xml:space="preserve">
+    <value>SMS code failed, try again</value>
+  </data>
+  <data name="CodeBehind_MafileMoverVM_SmsCodeStepTip" xml:space="preserve">
+    <value>Enter the code from the SMS sent to your phone number</value>
+  </data>
+  <data name="CodeBehind_MainVM_AuthenticatorNotRemoved" xml:space="preserve">
+    <value>Something went wrong</value>
+  </data>
+  <data name="CodeBehind_MainVM_AuthenticatorRemoved" xml:space="preserve">
+    <value>Authenticator removed</value>
+  </data>
+  <data name="CodeBehind_MainVM_CantDecryptPassword" xml:space="preserve">
+    <value>Can't decrypt password. Maybe password from this mafile was encrypted with another encryption password</value>
+  </data>
+  <data name="CodeBehind_MainVM_CantRemoveAlreadyExist" xml:space="preserve">
+    <value>Can't move mafile, maybe mafile with same name already exists in mafiles_removed folder.</value>
+  </data>
+  <data name="CodeBehind_MainVM_CantRemoveMafile" xml:space="preserve">
+    <value>Can't remove mafile:</value>
+  </data>
+  <data name="CodeBehind_MainVM_CantRetrieveSteamIDToUpdate" xml:space="preserve">
+    <value>Can't retrieve SteamID from mafile to save changes. Need to relogin. Canceled</value>
+  </data>
+  <data name="CodeBehind_MainVM_ConfirmLoginFailedMoreThanOneRequest" xml:space="preserve">
+    <value>Multiple login requests found. For security reasons, the operation is canceled</value>
+  </data>
+  <data name="CodeBehind_MainVM_ConfirmLoginFailedNoRequests" xml:space="preserve">
+    <value>No login requests found</value>
+  </data>
+  <data name="CodeBehind_MainVM_ConfirmLoginSuccess" xml:space="preserve">
+    <value>Login success:</value>
+  </data>
+  <data name="CodeBehind_MainVM_ConfirmRemovingAuthenticator" xml:space="preserve">
+    <value>Are you sure you want to remove the authenticator?
+After that, you will not be able to trade or use the marketplace for 15 days. Mafile will be deleted permanently</value>
+  </data>
+  <data name="CodeBehind_MainVM_ConfirmationError" xml:space="preserve">
+    <value>Confirmation error</value>
+  </data>
+  <data name="CodeBehind_MainVM_Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="CodeBehind_MainVM_ImportAdded" xml:space="preserve">
+    <value>added:</value>
+  </data>
+  <data name="CodeBehind_MainVM_ImportErrors" xml:space="preserve">
+    <value>errors:</value>
+  </data>
+  <data name="CodeBehind_MainVM_ImportSkipped" xml:space="preserve">
+    <value>skipped:</value>
+  </data>
+  <data name="CodeBehind_MainVM_LoginCopied" xml:space="preserve">
+    <value>Login copied</value>
+  </data>
+  <data name="CodeBehind_MainVM_MafileCopied" xml:space="preserve">
+    <value>Mafile copied</value>
+  </data>
+  <data name="CodeBehind_MainVM_MafileImportError" xml:space="preserve">
+    <value>Mafile import error</value>
+  </data>
+  <data name="CodeBehind_MainVM_MafileNotCopied" xml:space="preserve">
+    <value>Mafile not copied</value>
+  </data>
+  <data name="CodeBehind_MainVM_MissingRCode" xml:space="preserve">
+    <value>Missing RCode</value>
+  </data>
+  <data name="CodeBehind_MainVM_MissingSessionInMafile" xml:space="preserve">
+    <value>. It has no session. Add this file separately from the others</value>
+  </data>
+  <data name="CodeBehind_MainVM_PasswordCopied" xml:space="preserve">
+    <value>Password copied</value>
+  </data>
+  <data name="CodeBehind_MainVM_RemoveMafileConfirmation" xml:space="preserve">
+    <value>Remove mafile?
+Mafile will be moved to 'mafiles_removed' directory
+This action will NOT remove the Steam Guard from the account</value>
+  </data>
+  <data name="CodeBehind_MainVM_SdaManifestEntryNotFound" xml:space="preserve">
+    <value>The selected manifest.json does not contain an entry for this .mafile.</value>
+  </data>
+  <data name="CodeBehind_MainVM_SdaWrongPassword" xml:space="preserve">
+    <value>Wrong SDA password. Please try again.</value>
+  </data>
+  <data name="CodeBehind_MainVM_SessionRefreshed" xml:space="preserve">
+    <value>Session refreshed</value>
+  </data>
+  <data name="CodeBehind_MainVM_SteamIdCopied" xml:space="preserve">
+    <value>SteamID copied</value>
+  </data>
+  <data name="CodeBehind_MainVM_SuccessfulLogin" xml:space="preserve">
+    <value>Successful login</value>
+  </data>
+  <data name="CodeBehind_SessionHandler_SessionWasRefreshedAutomatically" xml:space="preserve">
+    <value>Session was refreshed automatically</value>
+  </data>
+  <data name="CodeBehind_SetAccountPasswordsVM_PartialSuccess" xml:space="preserve">
+    <value>Success: {0}, Not found: {1}, Errors: {2}</value>
+  </data>
+  <data name="CodeBehind_SetAccountPasswordsVM_Success" xml:space="preserve">
+    <value>Passwords successfully set for {0} mafiles</value>
+  </data>
+  <data name="CodeBehind_SettingsVM_MafileRenaming_AllRenamed" xml:space="preserve">
+    <value>All mafiles successfully renamed ({0}).
+Backup was created: {1}</value>
+  </data>
+  <data name="CodeBehind_SettingsVM_MafileRenaming_Error" xml:space="preserve">
+    <value>Error while renaming mafiles. It was saved in log</value>
+  </data>
+  <data name="CodeBehind_SettingsVM_MafileRenaming_PartialSuccess" xml:space="preserve">
+    <value>Total mafiles: {0}
+Renamed: {1}
+Conflicts: {2}
+Errors: {3}
+
+Backup of mafiles saved in file: {4}</value>
+  </data>
+  <data name="CodeBehind_Settings_ErrorWhileLoadingSettings" xml:space="preserve">
+    <value>Error while loading settings. Settings were reset</value>
+  </data>
+  <data name="Common_Abbreviations_Count_Items" xml:space="preserve">
+    <value>pcs</value>
+  </data>
+  <data name="Common_Abbreviations_Time_Seconds" xml:space="preserve">
+    <value>sec</value>
+  </data>
+  <data name="Common_Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Common_Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Common_Canceled" xml:space="preserve">
+    <value>Canceled</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Common_Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Common_EnterValidNumber" xml:space="preserve">
+    <value>Enter a valid number</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Common_FieldCannotBeEmpty" xml:space="preserve">
+    <value>Field cannot be empty</value>
+  </data>
+  <data name="Common_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Common_MasterPassword" xml:space="preserve">
+    <value>Master password</value>
+  </data>
+  <data name="Common_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Common_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Common_RequestError" xml:space="preserve">
+    <value>Request error</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Common_Set" xml:space="preserve">
+    <value>Set</value>
+  </data>
+  <data name="Common_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="ConfirmCancelDialog_Title" xml:space="preserve">
+    <value>Confirm action</value>
+  </data>
+  <data name="ExportDialog_AccountsPlaceholder" xml:space="preserve">
+    <value>One account per line (leave empty for all accounts)</value>
+  </data>
+  <data name="ExportDialog_AccountsToExport" xml:space="preserve">
+    <value>Accounts to export (empty = all):</value>
+  </data>
+  <data name="ExportDialog_ExportAccountsPlaceholder" xml:space="preserve">
+    <value>Enter logins or SteamIDs (one per line). Supports login:password format — the password will be ignored. Leave empty to export all accounts.</value>
+  </data>
+  <data name="ExportDialog_ExportButton" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ExportDialog_ExportFolderPlaceholder" xml:space="preserve">
+    <value>Export folder</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_ExportToZip" xml:space="preserve">
+    <value>Export to ZIP archive</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_IncludeIdentitySecret" xml:space="preserve">
+    <value>Include identity secret</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_IncludeOtherInfo" xml:space="preserve">
+    <value>Include other info</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_IncludeRCode" xml:space="preserve">
+    <value>Include RCode</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_IncludeSessionData" xml:space="preserve">
+    <value>Include session data</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_IncludeSharedSecret" xml:space="preserve">
+    <value>Include shared secret</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_NextPassword" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="ExportDialog_ExportOptions_UseLoginAsMafileName" xml:space="preserve">
+    <value>Use login as mafile name</value>
+  </data>
+  <data name="ExportDialog_ExportSettingsCommon" xml:space="preserve">
+    <value>General:</value>
+  </data>
+  <data name="ExportDialog_ExportSettingsHeader" xml:space="preserve">
+    <value>Export settings</value>
+  </data>
+  <data name="ExportDialog_ExportSettingsNext" xml:space="preserve">
+    <value>Next:</value>
+  </data>
+  <data name="ExportDialog_ExportTitle" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="ExportDialog_SelectPathHint" xml:space="preserve">
+    <value>Select path</value>
+  </data>
+  <data name="ExportDialog_TemplateHint" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="ExportDialog_Tooltips_AddTemplate" xml:space="preserve">
+    <value>Add template</value>
+  </data>
+  <data name="ExportDialog_Tooltips_DeleteTemplate" xml:space="preserve">
+    <value>Delete template</value>
+  </data>
+  <data name="ExportDialog_Tooltips_EditTemplate" xml:space="preserve">
+    <value>Edit template</value>
+  </data>
+  <data name="ExportDialog_Tooltips_ExportToZip" xml:space="preserve">
+    <value>Export to a ZIP archive instead of a folder. The archive will be saved in the selected directory as N_timestamp.zip.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_IncludeIdentitySecret" xml:space="preserve">
+    <value>Includes identity_secret and device_id. Required for confirmations and provides access to trades and the market.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_IncludeOtherInfo" xml:space="preserve">
+    <value>Includes additional optional fields not currently used by Steam, but potentially usable in the future and may contain sensitive information.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_IncludeRCode" xml:space="preserve">
+    <value>Recovery code. Allows removing Steam Guard from the account if access is lost.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_IncludeSessionData" xml:space="preserve">
+    <value>Includes current session data. If the session is active and valid, allows accessing the account without entering a password using the mafile.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_IncludeSharedSecret" xml:space="preserve">
+    <value>Allows generating confirmation codes and logging into the account if a password or active session is available.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_NextPassword" xml:space="preserve">
+    <value>Include Next-compatible password data.</value>
+  </data>
+  <data name="ExportDialog_Tooltips_UseLoginAsMafileName" xml:space="preserve">
+    <value>Use the account login as the mafile name.</value>
+  </data>
+  <data name="LanguageName" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="LanguageWord" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="LinkerDialog_Authorization" xml:space="preserve">
+    <value>Authorization</value>
+  </data>
+  <data name="LinkerDialog_CancelButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="LinkerDialog_Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="LinkerDialog_Completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="LinkerDialog_CopyRCodeButton" xml:space="preserve">
+    <value>Copy RCode</value>
+  </data>
+  <data name="LinkerDialog_EmailCode" xml:space="preserve">
+    <value>Email code</value>
+  </data>
+  <data name="LinkerDialog_EmailLink" xml:space="preserve">
+    <value>Email link</value>
+  </data>
+  <data name="LinkerDialog_FinishButton" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="LinkerDialog_Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LinkerDialog_MafileLinked" xml:space="preserve">
+    <value>Mafile successfully linked</value>
+  </data>
+  <data name="LinkerDialog_Message" xml:space="preserve">
+    <value>Message:</value>
+  </data>
+  <data name="LinkerDialog_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="LinkerDialog_PhoneNumber" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="LinkerDialog_ProceedButton" xml:space="preserve">
+    <value>Proceed</value>
+  </data>
+  <data name="LinkerDialog_SmsCode" xml:space="preserve">
+    <value>SMS code</value>
+  </data>
+  <data name="LinkerDialog_SmsOrCode" xml:space="preserve">
+    <value>SMS or code</value>
+  </data>
+  <data name="LinkerDialog_Title" xml:space="preserve">
+    <value>Linker</value>
+  </data>
+  <data name="LinksView_Documentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="LinksView_UsefulLinks" xml:space="preserve">
+    <value>Useful links</value>
+  </data>
+  <data name="LoginAgainDialog_CancelButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="LoginAgainDialog_LoginButton" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginAgainDialog_LoginFor" xml:space="preserve">
+    <value>Login for</value>
+  </data>
+  <data name="LoginAgainDialog_PasswordBox" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="LoginAgainDialog_SaveEncryptedPassword" xml:space="preserve">
+    <value>Save encrypted password to mafile</value>
+  </data>
+  <data name="LoginAgainDialog_Title" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="MafileImportDialog_ConflictCount" xml:space="preserve">
+    <value>Already exist</value>
+  </data>
+  <data name="MafileImportDialog_OverwriteConflicts" xml:space="preserve">
+    <value>Overwrite conflicting mafiles</value>
+  </data>
+  <data name="MafileImportDialog_Title" xml:space="preserve">
+    <value>Mafile import</value>
+  </data>
+  <data name="MafileImportDialog_TotalCount" xml:space="preserve">
+    <value>Mafiles to import</value>
+  </data>
+  <data name="MafileMoverView_Done" xml:space="preserve">
+    <value>Steam Guard moved</value>
+  </data>
+  <data name="MafileMoverView_Title" xml:space="preserve">
+    <value>Move Steam Guard</value>
+  </data>
+  <data name="MainWindow_CodeCopied" xml:space="preserve">
+    <value>Copied</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_ApiKey" xml:space="preserve">
+    <value>Api key</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_CancelAll" xml:space="preserve">
+    <value>Cancel all</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_CancelOne" xml:space="preserve">
+    <value>Cancel this item</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_ConfirmAll" xml:space="preserve">
+    <value>Confirm all</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_ConfirmOne" xml:space="preserve">
+    <value>Confirm this item</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_ItemsCount" xml:space="preserve">
+    <value>{0} items</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_Market" xml:space="preserve">
+    <value>Sell</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_MarketMulti" xml:space="preserve">
+    <value>Multiple Listings</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_Purchase" xml:space="preserve">
+    <value>Purchase</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_Recovery" xml:space="preserve">
+    <value>Recovery</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_Trade" xml:space="preserve">
+    <value>Trade Offer</value>
+  </data>
+  <data name="MainWindow_ConfirmationTemplates_TradeWith" xml:space="preserve">
+    <value>Trade with</value>
+  </data>
+  <data name="MainWindow_ContextMenus_Mafile_CopyLogin" xml:space="preserve">
+    <value>Copy login</value>
+  </data>
+  <data name="MainWindow_ContextMenus_Mafile_CopyMafile" xml:space="preserve">
+    <value>Copy mafile</value>
+  </data>
+  <data name="MainWindow_ContextMenus_Mafile_CopyPassword" xml:space="preserve">
+    <value>Copy password</value>
+  </data>
+  <data name="MainWindow_ContextMenus_Mafile_CopySteamId" xml:space="preserve">
+    <value>Copy SteamID</value>
+  </data>
+  <data name="MainWindow_Footer_AccountsCount" xml:space="preserve">
+    <value>Accounts: </value>
+  </data>
+  <data name="MainWindow_Footer_SelectedAccount" xml:space="preserve">
+    <value>Current: </value>
+  </data>
+  <data name="MainWindow_Global_DragNDropHint" xml:space="preserve">
+    <value>Release to import mafiles</value>
+  </data>
+  <data name="MainWindow_Global_LoadingHint" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="MainWindow_LeftPart_NoMafiles" xml:space="preserve">
+    <value>No mafiles found..</value>
+  </data>
+  <data name="MainWindow_Menu_Account_Caption" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="MainWindow_Menu_Account_Link" xml:space="preserve">
+    <value>Link</value>
+  </data>
+  <data name="MainWindow_Menu_Account_LoginAgain" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="MainWindow_Menu_Account_MoveSteamGuard" xml:space="preserve">
+    <value>Move Steam Guard</value>
+  </data>
+  <data name="MainWindow_Menu_Account_RefreshSession" xml:space="preserve">
+    <value>Refresh session</value>
+  </data>
+  <data name="MainWindow_Menu_Account_Unlink" xml:space="preserve">
+    <value>Unlink</value>
+  </data>
+  <data name="MainWindow_Menu_File_Caption" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="MainWindow_Menu_File_Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="MainWindow_Menu_File_OpenFolder" xml:space="preserve">
+    <value>Open folder</value>
+  </data>
+  <data name="MainWindow_Menu_File_Other_OpenExport" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="MainWindow_Menu_File_Other_SetPasswords" xml:space="preserve">
+    <value>Set passwords</value>
+  </data>
+  <data name="MainWindow_Menu_File_Other_Title" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="MainWindow_Menu_File_Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="MainWindow_Menu_File_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="MainWindow_Menu_Help_Caption" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="MainWindow_Menu_Help_Link" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="MainWindow_Menu_Help_Links" xml:space="preserve">
+    <value>Links</value>
+  </data>
+  <data name="MainWindow_RightPart_ConfirmLogin" xml:space="preserve">
+    <value>Confirm login</value>
+  </data>
+  <data name="MainWindow_RightPart_LoadConfirmations" xml:space="preserve">
+    <value>Load confirmations</value>
+  </data>
+  <data name="MainWindow_RightPart_NoConfirmations" xml:space="preserve">
+    <value>No confirmations</value>
+  </data>
+  <data name="SdaPasswordDialog_ManifestEntryNotFound" xml:space="preserve">
+    <value>Selected manifest.json does not contain an entry for this mafile.</value>
+  </data>
+  <data name="SdaPasswordDialog_ManifestMissing" xml:space="preserve">
+    <value>This mafile looks like it was encrypted by SDA, but manifest.json was not found. Please select your SDA manifest.json to continue.</value>
+  </data>
+  <data name="SdaPasswordDialog_Message" xml:space="preserve">
+    <value>This mafile is encrypted with Steam Desktop Authenticator. Enter your SDA encryption password to import it.</value>
+  </data>
+  <data name="SdaPasswordDialog_PasswordHint" xml:space="preserve">
+    <value>SDA encryption password</value>
+  </data>
+  <data name="SdaPasswordDialog_Title" xml:space="preserve">
+    <value>SDA encryption password</value>
+  </data>
+  <data name="SdaPasswordDialog_WrongPassword" xml:space="preserve">
+    <value>Wrong SDA password. Please try again.</value>
+  </data>
+  <data name="SetAccountPasswordsView_EncryptionHint" xml:space="preserve">
+    <value>All passwords in mafiles will be encrypted using the encryption password.</value>
+  </data>
+  <data name="SetAccountPasswordsView_EncryptionPassword" xml:space="preserve">
+    <value>Encryption password:</value>
+  </data>
+  <data name="SetAccountPasswordsView_EnterCredentials" xml:space="preserve">
+    <value>Enter credentials (login:password per line):</value>
+  </data>
+  <data name="SetAccountPasswordsView_EnterPassword" xml:space="preserve">
+    <value>Enter password</value>
+  </data>
+  <data name="SetAccountPasswordsView_InputFormat" xml:space="preserve">
+    <value>Supported formats:
+
+login:password
+steamid:password</value>
+  </data>
+  <data name="SetAccountPasswordsView_MasterPasswordRequired" xml:space="preserve">
+    <value>Master password must be set first:</value>
+  </data>
+  <data name="SetAccountPasswordsView_Status" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="SetAccountPasswordsView_Title" xml:space="preserve">
+    <value>Set Account Passwords</value>
+  </data>
+  <data name="SetEncryptionPasswordDialog_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="SetEncryptionPasswordDialog_DialogText" xml:space="preserve">
+    <value>You have previously set an encryption password for passwords in mafiles, specify it so that the application can automatically log in in case of problems with the session.
+(Optional)</value>
+  </data>
+  <data name="SetEncryptionPasswordDialog_Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="SetEncryptionPasswordDialog_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="SetEncryptionPasswordDialog_Title" xml:space="preserve">
+    <value>Encryption password</value>
+  </data>
+  <data name="SettingsDialog_ApplyNamingMode" xml:space="preserve">
+    <value>Apply and rename</value>
+  </data>
+  <data name="SettingsDialog_ConfirmImport" xml:space="preserve">
+    <value>Ask confirmation when importing mafiles</value>
+  </data>
+  <data name="SettingsDialog_ConfirmMafileImport" xml:space="preserve">
+    <value>Ask confirmation when importing mafiles</value>
+  </data>
+  <data name="SettingsDialog_ConfirmMafileImportHint" xml:space="preserve">
+    <value>Always show confirmation dialog when importing maFiles. Does not affect showing the dialog when file conflicts occur</value>
+  </data>
+  <data name="SettingsDialog_EncryptionPassword" xml:space="preserve">
+    <value>Encryption password</value>
+  </data>
+  <data name="SettingsDialog_IgnorePatchTuesdayErrors" xml:space="preserve">
+    <value>Ignore Patch Tuesday errors in timer (exp.)</value>
+  </data>
+  <data name="SettingsDialog_IgnorePatchTuesdayErrorsHint" xml:space="preserve">
+    <value>Ignore errors that occur every Tuesday (Wednesday night in GMT) when Steam doing technical works and auto-confirm timers turns off unnecessarily</value>
+  </data>
+  <data name="SettingsDialog_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="SettingsDialog_MafileNamingMode" xml:space="preserve">
+    <value>Mafile naming mode</value>
+  </data>
+  <data name="SettingsDialog_MasterPassword" xml:space="preserve">
+    <value>Master password</value>
+  </data>
+  <data name="SettingsDialog_PasswordBox_CurrentCryptPassword" xml:space="preserve">
+    <value>Current encryption password</value>
+  </data>
+  <data name="SettingsDialog_PasswordBox_Hint" xml:space="preserve">
+    <value>Not saved to disk</value>
+  </data>
+  <data name="SettingsDialog_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SettingsDialog_SeparateMarketConfirmations" xml:space="preserve">
+    <value>Display Market listings individually</value>
+  </data>
+  <data name="SettingsDialog_Title" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="TextFieldDialog_Title" xml:space="preserve">
+    <value>Enter value</value>
+  </data>
+  <data name="WaitLoginDialog_Text" xml:space="preserve">
+    <value>Login in progress. Please wait</value>
+  </data>
+</root>
